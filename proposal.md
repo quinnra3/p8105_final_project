@@ -1,7 +1,7 @@
 Final Project Proposal
 ================
 Quinn Anderson, Laylah Jones, Wynter Henry
-2023-11-07
+2023-11-06
 
 ### Proposal guidelines:
 
@@ -39,27 +39,30 @@ The intended final products for this project are summary report of our
 findings as well as a project website. Potential challenges of this
 project include aligning data sources….. etc.
 
-### Please see below for our draft project timeline and milestones:
+#### *Please see below for our draft project timeline and milestones:*
 
 November 6 - 12
 
-- Complete data import, cleaning, tidying
-- Begin initial data summaries and manipulation
+- Data import, cleaning, tidying
+- Begin initial data manipulation
+- Submit proposal and Github repo (deliverable)
 
 November 12 - 19
 
-- Complete data summaries manipulation
+- Complete data tidying
+- Begin data manipulation
 - Begin data exploration
 - Project review meeting (assigned)
 
 November 20 - 26
 
-- Complete data exploration
-- Begin website design and final products
+- Data exploration
+- Begin website (deliverable)
+- Begin report (deliverable)
 
 November 27 - December 4
 
-- Complete final products (website, written report)
+- Complete website, screencast, and report (deliverables)
 
 December 4 - December 9
 
@@ -70,4 +73,4 @@ December 4 - December 9
 
 December 13
 
-- In class presentation of project
+- In class presentation
