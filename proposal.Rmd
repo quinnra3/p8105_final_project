@@ -2,7 +2,7 @@
 title: "Final Project Proposal"
 author: "Quinn Anderson, Laylah Jones, Wynter Henry"
 date: "2023-11-07"
-output: html_document
+output: github_document
 ---
 
 First, define teams and propose project. This proposal should be a half-page to a page in length and include: 
