@@ -35,6 +35,18 @@ to investigate where rodent inspection and activity is most prevalent
 \[add data source links\]. Our hope is to add further insight into a
 rat-tastic issue the city faces.
 
+In conducting our research, some important questions we would like to
+explore are:
+
+1.  What is the overall frequency of rat sightings?
+2.  What is the distribution of rat sightings across different boroughs
+    in NYC?
+3.  Are there any seasonal trends or patterns in rat sightings?
+4.  Is there any correlation between monthly collection of garbage
+    tonnages that the NYC Department of Sanitation collects and the
+    prevalence of rat sightings?
+5.  Which borough has the most monthly reported rat sightings?
+
 The intended final products for this project are summary report of our
 findings as well as a project website. Potential challenges of this
 project include aligning data sources….. etc.
