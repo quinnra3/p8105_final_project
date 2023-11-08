@@ -8,7 +8,7 @@ Quinn Anderson, Laylah Jones, Wynter Henry
 First, define teams and propose project. This proposal should be a
 half-page to a page in length and include:
 
--   The group members (Wynter Henry, wch2124)
+-   The group members (names and UNIs)
 -   The tentative project title
 -   The motivation for this project
 -   The intended final products
@@ -27,7 +27,7 @@ this form. Doing so will help us keep track of teams.
 Project title: Rats in the City
 
 This is a project proposal for the following team members: Wynter Henry
-(UNI ), Quinn Anderson (UNI qra2000), and Laylah Jones (UNI ). We are
+(wch2124), Quinn Anderson (UNI qra2000), and Laylah Jones (UNI ). We are
 proposing to investigate the presence of rats in the city to determine
 if they really rule the big apple. We will utilize data sourced from
 Transit, NYC Rodent Inspection data, and NYC borough data to investigate
