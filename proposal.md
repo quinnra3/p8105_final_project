@@ -24,7 +24,8 @@ this form. Doing so will help us keep track of teams.
 
 ### P8105 Final Project Proposal
 
-Project title: Rats in the City
+Project title: Rat Reign: Unveiling the Truth Behind NYC’s Rodent
+Infestation
 
 This is a project proposal for the following team members: Wynter Henry
 (UNI ), Quinn Anderson (UNI qra2000), and Laylah Jones (UNI lsj2122). We
@@ -47,8 +48,13 @@ explore are:
     prevalence of rat sightings?
 5.  Which borough has the most monthly reported rat sightings?
 
-The intended final products for this project are summary report of our
-findings as well as a project website. Potential challenges of this
+The intended final products for this project consist of a comprehensive
+report summarizing our findings, interactive data visualizations, as
+well as a project website. Our planned analyses/visualizations include a
+geospatial analysis to map the frequency of rat sightings across the
+different boroughs, a comparative analysis of rat sightings in relation
+to garbage collection, and interactive visualizations to illustrate
+trends and patterns in rat infestation. Potential challenges of this
 project include aligning data sources….. etc.
 
 #### *Please see below for our draft project timeline and milestones:*
