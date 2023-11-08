@@ -1,20 +1,20 @@
 Final Project Proposal
 ================
 Quinn Anderson, Laylah Jones, Wynter Henry
-2023-11-06
+2023-11-08
 
 ### Proposal guidelines:
 
 First, define teams and propose project. This proposal should be a
 half-page to a page in length and include:
 
-- The group members (names and UNIs)
-- The tentative project title
-- The motivation for this project
-- The intended final products
-- The anticipated data sources
-- The planned analyses / visualizations / coding challenges
-- The planned timeline
+-   The group members (Wynter Henry, wch2124)
+-   The tentative project title
+-   The motivation for this project
+-   The intended final products
+-   The anticipated data sources
+-   The planned analyses / visualizations / coding challenges
+-   The planned timeline
 
 This is intended to describe a project that is in the planning stages.
 Only one team member should submit this proposal via Canvas.
@@ -43,34 +43,34 @@ project include aligning data sources….. etc.
 
 November 6 - 12
 
-- Data import, cleaning, tidying
-- Begin initial data manipulation
-- Submit proposal and Github repo (deliverable)
+-   Data import, cleaning, tidying
+-   Begin initial data manipulation
+-   Submit proposal and Github repo (deliverable)
 
 November 12 - 19
 
-- Complete data tidying
-- Begin data manipulation
-- Begin data exploration
-- Project review meeting (assigned)
+-   Complete data tidying
+-   Begin data manipulation
+-   Begin data exploration
+-   Project review meeting (assigned)
 
 November 20 - 26
 
-- Data exploration
-- Begin website (deliverable)
-- Begin report (deliverable)
+-   Data exploration
+-   Begin website (deliverable)
+-   Begin report (deliverable)
 
 November 27 - December 4
 
-- Complete website, screencast, and report (deliverables)
+-   Complete website, screencast, and report (deliverables)
 
 December 4 - December 9
 
-- Submit:
-  - Report
-  - Webpage and screencast
-  - Peer assessment
+-   Submit:
+    -   Report
+    -   Webpage and screencast
+    -   Peer assessment
 
 December 13
 
-- In class presentation
+-   In class presentation
