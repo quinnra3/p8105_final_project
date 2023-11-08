@@ -8,7 +8,7 @@ Quinn Anderson, Laylah Jones, Wynter Henry
 First, define teams and propose project. This proposal should be a
 half-page to a page in length and include:
 
--   The group members (names and UNIs)
+-   The group members
 -   The tentative project title
 -   The motivation for this project
 -   The intended final products
