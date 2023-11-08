@@ -9,7 +9,7 @@ output: github_document
 
 First, define teams and propose project. This proposal should be a half-page to a page in length and include: 
 
-* The group members (Wynter Henry, wch2124)
+* The group members (names and UNIs)
 * The tentative project title
 * The motivation for this project
 * The intended final products
@@ -25,7 +25,7 @@ Please also submit (only once per team) a list of your team’s UNIs using this 
 
 Project title: Rats in the City 
 
-This is a project proposal for the following team members: Wynter Henry (UNI ), Quinn Anderson (UNI qra2000), and Laylah Jones (UNI ). We are proposing to investigate the presence of rats in the city to determine if they really rule the big apple. We will utilize data sourced from Transit, NYC Rodent Inspection data, and NYC borough data to investigate where rodent inspection and activity is most prevalent [add data source links]. Our hope is to add further insight into a rat-tastic issue the city faces. 
+This is a project proposal for the following team members: Wynter Henry (wch2124), Quinn Anderson (UNI qra2000), and Laylah Jones (UNI ). We are proposing to investigate the presence of rats in the city to determine if they really rule the big apple. We will utilize data sourced from Transit, NYC Rodent Inspection data, and NYC borough data to investigate where rodent inspection and activity is most prevalent [add data source links]. Our hope is to add further insight into a rat-tastic issue the city faces. 
 
 The intended final products for this project are summary report of our findings as well as a project website. Potential challenges of this project include aligning data sources..... etc. 
 
