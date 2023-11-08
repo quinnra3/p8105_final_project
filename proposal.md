@@ -1,7 +1,7 @@
 Final Project Proposal
 ================
 Quinn Anderson, Laylah Jones, Wynter Henry
-2023-11-06
+2023-11-08
 
 ### Proposal guidelines:
 
@@ -27,13 +27,13 @@ this form. Doing so will help us keep track of teams.
 Project title: Rats in the City
 
 This is a project proposal for the following team members: Wynter Henry
-(UNI ), Quinn Anderson (UNI qra2000), and Laylah Jones (UNI ). We are
-proposing to investigate the presence of rats in the city to determine
-if they really rule the big apple. We will utilize data sourced from
-Transit, NYC Rodent Inspection data, and NYC borough data to investigate
-where rodent inspection and activity is most prevalent \[add data source
-links\]. Our hope is to add further insight into a rat-tastic issue the
-city faces.
+(UNI ), Quinn Anderson (UNI qra2000), and Laylah Jones (UNI lsj2122). We
+are proposing to investigate the presence of rats in the city to
+determine if they really rule the big apple. We will utilize data
+sourced from Transit, NYC Rodent Inspection data, and NYC borough data
+to investigate where rodent inspection and activity is most prevalent
+\[add data source links\]. Our hope is to add further insight into a
+rat-tastic issue the city faces.
 
 The intended final products for this project are summary report of our
 findings as well as a project website. Potential challenges of this
