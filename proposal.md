@@ -37,7 +37,7 @@ city faces.
 
 The intended final products for this project are summary report of our
 findings as well as a project website. Potential challenges of this
-project include aligning data sources,…. etc.
+project include aligning data sources,… etc.
 
 #### *Please see below for our draft project timeline and milestones:*
 
