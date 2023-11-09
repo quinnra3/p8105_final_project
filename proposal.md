@@ -1,56 +1,20 @@
 Final Project Proposal
 ================
 Quinn Anderson, Laylah Jones, Wynter Henry
-<<<<<<< HEAD
 2023-11-09
-=======
-2023-11-08
->>>>>>> 7363e621bfc536d2d1006e922a6d75608a8a99ef
 
-### Proposal guidelines:
+### P8105 Final Project Proposal
 
-First, define teams and propose project. This proposal should be a
-half-page to a page in length and include:
-
--   The group members (names and UNIs)
--   The tentative project title
--   The motivation for this project
--   The intended final products
--   The anticipated data sources
--   The planned analyses / visualizations / coding challenges
--   The planned timeline
-
-This is intended to describe a project that is in the planning stages.
-Only one team member should submit this proposal via Canvas.
-
-Please also submit (only once per team) a list of your team’s UNIs using
-this form. Doing so will help us keep track of teams. trying to comitt
-\### P8105 Final Project Proposal
-
-Project title: Rat Reign: Unveiling the Truth Behind NYC’s Rodent
-Infestation
+# Project title: Rat Reign: Unveiling the Truth Behind NYC’s Rodent Infestation
 
 This is a project proposal for the following team members: Wynter Henry
-<<<<<<< HEAD
-(wch2124), Quinn Anderson (UNI qra2000), and Laylah Jones (UNI ). We are
-proposing to investigate the presence of rats in the city to determine
-if they really rule the big apple. We will utilize data sourced from
-Transit, NYC Rodent Inspection data, and NYC borough data to investigate
-where rodent inspection and activity is most prevalent \[add data source
-links\]. Our hope is to add further insight into a rat-tastic issue the
-city faces.
-
-The intended final products for this project are summary report of our
-findings as well as a project website. Potential challenges of this
-project include aligning data sources,… etc.
-=======
-(UNI ), Quinn Anderson (UNI qra2000), and Laylah Jones (UNI lsj2122). We
+(wch2124 ), Quinn Anderson (UNI qra2000), and Laylah Jones (lsj2122). We
 are proposing to investigate the presence of rats in the city to
-determine if they really rule the big apple. We will utilize data
+determine if they really rule the Big Apple. We will utilize data
 sourced from Transit, NYC Rodent Inspection data, and NYC borough data
-to investigate where rodent inspection and activity is most prevalent
-\[add data source links\]. Our hope is to add further insight into a
-rat-tastic issue the city faces.
+to investigate where rodent inspection and activity is most prevalent.
+Our hope is to add further insight into a rat-tastic issue the city
+faces.
 
 In conducting our research, some important questions we would like to
 explore are:
@@ -71,8 +35,9 @@ geospatial analysis to map the frequency of rat sightings across the
 different boroughs, a comparative analysis of rat sightings in relation
 to garbage collection, and interactive visualizations to illustrate
 trends and patterns in rat infestation. Potential challenges of this
-project include aligning data sources….. etc.
->>>>>>> 7363e621bfc536d2d1006e922a6d75608a8a99ef
+project include aligning data sources, determining if
+additional/different datasets are necessary to answer the questions we
+proposed. \>\>\>\>\>\>\> 7363e621bfc536d2d1006e922a6d75608a8a99ef
 
 #### *Please see below for our draft project timeline and milestones:*
 
