@@ -37,7 +37,7 @@ to garbage collection, and interactive visualizations to illustrate
 trends and patterns in rat infestation. Potential challenges of this
 project include aligning data sources, determining if
 additional/different datasets are necessary to answer the questions we
-proposed. \>\>\>\>\>\>\> 7363e621bfc536d2d1006e922a6d75608a8a99ef
+proposed.
 
 #### *Please see below for our draft project timeline and milestones:*
 

@@ -20,7 +20,6 @@ In conducting our research, some important questions we would like to explore ar
 5. Which borough has the most monthly reported rat sightings?
 
 The intended final products for this project consist of a comprehensive report summarizing our findings, interactive data visualizations, as well as a project website. Our planned analyses/visualizations include a geospatial analysis to map the frequency of rat sightings across the different boroughs, a comparative analysis of rat sightings in relation to garbage collection, and interactive visualizations to illustrate trends and patterns in rat infestation.  Potential challenges of this project include aligning data sources, determining if additional/different datasets are necessary to answer the questions we proposed. 
->>>>>>> 7363e621bfc536d2d1006e922a6d75608a8a99ef
 
 #### *Please see below for our draft project timeline and milestones:*
 
