@@ -20,7 +20,7 @@ First, define teams and propose project. This proposal should be a half-page to 
 This is intended to describe a project that is in the planning stages. Only one team member should submit this proposal via Canvas.
 
 Please also submit (only once per team) a list of your team’s UNIs using this form. Doing so will help us keep track of teams.
-
+trying to comitt
 ### P8105 Final Project Proposal
 
 Project title: Rats in the City 
