@@ -1,14 +1,14 @@
 Final Project Proposal
 ================
 Quinn Anderson, Laylah Jones, Wynter Henry
-2023-11-08
+2023-11-09
 
 ### Proposal guidelines:
 
 First, define teams and propose project. This proposal should be a
 half-page to a page in length and include:
 
--   The group members
+-   The group members (names and UNIs)
 -   The tentative project title
 -   The motivation for this project
 -   The intended final products
@@ -37,7 +37,7 @@ city faces.
 
 The intended final products for this project are summary report of our
 findings as well as a project website. Potential challenges of this
-project include aligning data sources….. etc.
+project include aligning data sources,…. etc.
 
 #### *Please see below for our draft project timeline and milestones:*
 
