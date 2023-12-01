@@ -7,22 +7,22 @@ navbar:
     - text: "About"
       href: about.html
       
-  right:
+ 
     - text: "Proposal"
-      href: about.html
+      href: 
     
-  right:
+  
     - text: "Exploratory Analysis"
-      href: about.html
+      href: 
       
-       right:
+
     - text: "Visualizations"
-      href: about.html
+      href: 
 
       
-      right:
+ 
     - text: "Report"
-      href: about.html
+      href: 
      
 output:
   html_document:
