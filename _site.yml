@@ -2,28 +2,21 @@ name: "Rat Website!"
 output_dir: "."
 navbar:
   title: "Home"
-  
   right:
     - text: "About"
       href: about.html
-      
-  right:
+ 
     - text: "Proposal"
-      href: about.html
-    
-  right:
+      href: proposal.html
+ 
     - text: "Exploratory Analysis"
-      href: about.html
-      
-       right:
+      href: exploratory_analysis.html
+  
     - text: "Visualizations"
-      href: about.html
+      href: visualizations.html
 
-      
-      right:
     - text: "Report"
-      href: about.html
-     
+      href: report.html
 output:
   html_document:
     theme: cerulean
