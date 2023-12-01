@@ -1,14 +1,29 @@
-name: "Final Project Website!"
+name: "Rat Website!"
 output_dir: "."
 navbar:
   title: "Home"
+  
   right:
     - text: "About"
       href: about.html
-    - icon: fa-envelope fa-lg
-      href: mailto:<you@youremail.com>
-    - icon: fa-github fa-lg
-      href: http://github.com/<YOUR_GH_NAME>/
+      
+  right:
+    - text: "Proposal"
+      href: about.html
+    
+  right:
+    - text: "Exploratory Analysis"
+      href: about.html
+      
+       right:
+    - text: "Visualizations"
+      href: about.html
+
+      
+      right:
+    - text: "Report"
+      href: about.html
+     
 output:
   html_document:
     theme: cerulean
