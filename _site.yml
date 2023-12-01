@@ -5,7 +5,6 @@ navbar:
   right:
     - text: "About"
       href: about.html
-<<<<<<< HEAD
  
     - text: "Proposal"
       href: proposal.html
@@ -18,26 +17,7 @@ navbar:
 
     - text: "Report"
       href: report.html
-=======
-      
- 
-    - text: "Proposal"
-      href: 
-    
-  
-    - text: "Exploratory Analysis"
-      href: 
-      
-
-    - text: "Visualizations"
-      href: 
-
-      
- 
-    - text: "Report"
-      href: 
      
->>>>>>> d07e350a8d25a8a91d653b07126877b83f7974a8
 output:
   html_document:
     theme: cerulean
