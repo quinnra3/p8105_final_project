@@ -9,8 +9,8 @@ navbar:
     - text: "Proposal"
       href: proposal.html
  
-    - text: "Explorary_Analysis"
-      href: exploratory_analysis.html
+    - text: "EDA"
+      href: eda.html
   
     - text: "Visualizations"
       href: visualizations.html
