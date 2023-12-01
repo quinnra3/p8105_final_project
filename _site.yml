@@ -9,7 +9,7 @@ navbar:
     - text: "Proposal"
       href: proposal.html
  
-    - text: "Exploratory Analysis"
+    - text: "Explorary_Analysis"
       href: exploratory_analysis.html
   
     - text: "Visualizations"
