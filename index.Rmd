@@ -8,3 +8,7 @@ date: '2023-12-01'
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+Hi everyone!
+Welcome to our website for the P8105 final project.
+
+## add pictures and gifs 
