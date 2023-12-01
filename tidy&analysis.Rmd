@@ -6,9 +6,39 @@ date: '2023-12-01'
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(readr)
+library(readxl)
+library(tidyverse)
+library(tidyr)
+library(dplyr)
+library(stringr)
 ```
 
-Hi everyone!
-Welcome to our website for the P8105 final project.
+Cleaning and tidying the datasets: 
 
-## add pictures and gifs 
+```{r}
+## DSNY Monthly Tonnage Dataset 
+
+dsny_df <- read_csv("data/DSNY_Monthly_Tonnage_Data_20231108.csv")
+
+dsny_df |> 
+  janitor::clean_names() |> 
+  separate(month, c("year", "month"), sep = " / ") |> filter(year == "2023") |> 
+  select(-communitydistrict, -resorganicstons, -schoolorganictons, -leavesorganictons, -xmastreetons)
+```
+
+```{r}
+## Rodent Inspection Dataset 
+
+rodent_inspec_df <- read_csv("data/Rodent Inspection Data - 2023.csv")
+
+rodent_inspec_df |> janitor::clean_names() |> select(-job_id, -job_ticket_or_work_order_id, -job_progress, -bbl, -house_number, -street_name, -block, -lot, -approved_date, -location, -community_board, -council_district, -census_tract, -bin, -nta)
+```
+
+```{r}
+## Transit App Rodent Reports 
+
+rodent_app_df <- read_csv("data/Transit app rat reports - 2023-10-08 to 2023-11-07.csv")
+
+```
+
