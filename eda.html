@@ -276,7 +276,431 @@ $(document).ready(function () {
 </div>
 
 
+<div id="nyc-rodent-inspection-data-summary" class="section level2">
+<h2>NYC Rodent Inspection Data Summary</h2>
+<pre class="r"><code>rodent_inspec_df &lt;- read_csv(&quot;data/Rodent Inspection Data - 2023.csv&quot;)</code></pre>
+<pre><code>## Rows: 17578 Columns: 25
+## ── Column specification ──────────────────────────
+## Delimiter: &quot;,&quot;
+## chr (12): INSPECTION_TYPE, JOB_ID, BLOCK, LOT, HOUSE_NUMBER, STREET_NAME, BO...
+## dbl (13): JOB_TICKET_OR_WORK_ORDER_ID, JOB_PROGRESS, BBL, BORO_CODE, ZIP_COD...
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<pre class="r"><code>rodent_inspec_df = 
+  rodent_inspec_df |&gt; 
+  janitor::clean_names() |&gt; select(-job_id, -job_ticket_or_work_order_id, -job_progress, -bbl, -house_number, -street_name, -block, -lot, -approved_date, -location, -community_board, -council_district, -census_tract, -bin, -nta)
 
+skimr::skim_without_charts(rodent_inspec_df)</code></pre>
+<table>
+<caption>Data summary</caption>
+<tbody>
+<tr class="odd">
+<td align="left">Name</td>
+<td align="left">rodent_inspec_df</td>
+</tr>
+<tr class="even">
+<td align="left">Number of rows</td>
+<td align="left">17578</td>
+</tr>
+<tr class="odd">
+<td align="left">Number of columns</td>
+<td align="left">10</td>
+</tr>
+<tr class="even">
+<td align="left">_______________________</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Column type frequency:</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">character</td>
+<td align="left">4</td>
+</tr>
+<tr class="odd">
+<td align="left">numeric</td>
+<td align="left">6</td>
+</tr>
+<tr class="even">
+<td align="left">________________________</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Group variables</td>
+<td align="left">None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: character</strong></p>
+<table>
+<colgroup>
+<col width="21%" />
+<col width="13%" />
+<col width="18%" />
+<col width="5%" />
+<col width="5%" />
+<col width="8%" />
+<col width="12%" />
+<col width="14%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">skim_variable</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="right">min</th>
+<th align="right">max</th>
+<th align="right">empty</th>
+<th align="right">n_unique</th>
+<th align="right">whitespace</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">inspection_type</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">4</td>
+<td align="right">10</td>
+<td align="right">0</td>
+<td align="right">5</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="left">borough</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">5</td>
+<td align="right">13</td>
+<td align="right">0</td>
+<td align="right">5</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="left">inspection_date</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">13</td>
+<td align="right">16</td>
+<td align="right">0</td>
+<td align="right">12647</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="left">result</td>
+<td align="right">2</td>
+<td align="right">1</td>
+<td align="right">6</td>
+<td align="right">18</td>
+<td align="right">0</td>
+<td align="right">7</td>
+<td align="right">0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: numeric</strong></p>
+<table style="width:100%;">
+<colgroup>
+<col width="12%" />
+<col width="9%" />
+<col width="12%" />
+<col width="9%" />
+<col width="8%" />
+<col width="9%" />
+<col width="9%" />
+<col width="9%" />
+<col width="9%" />
+<col width="9%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">skim_variable</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="right">p0</th>
+<th align="right">p25</th>
+<th align="right">p50</th>
+<th align="right">p75</th>
+<th align="right">p100</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">boro_code</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">2.51</td>
+<td align="right">1.12</td>
+<td align="right">1.00</td>
+<td align="right">2.00</td>
+<td align="right">3.00</td>
+<td align="right">3.00</td>
+<td align="right">5.00</td>
+</tr>
+<tr class="even">
+<td align="left">zip_code</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">10749.43</td>
+<td align="right">535.48</td>
+<td align="right">10001.00</td>
+<td align="right">10303.00</td>
+<td align="right">10473.00</td>
+<td align="right">11225.00</td>
+<td align="right">11697.00</td>
+</tr>
+<tr class="odd">
+<td align="left">x_coord</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">1003488.55</td>
+<td align="right">17749.30</td>
+<td align="right">915020.00</td>
+<td align="right">993786.00</td>
+<td align="right">1003081.50</td>
+<td align="right">1013626.75</td>
+<td align="right">1066513.00</td>
+</tr>
+<tr class="even">
+<td align="left">y_coord</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">210003.96</td>
+<td align="right">29987.72</td>
+<td align="right">121970.00</td>
+<td align="right">186182.50</td>
+<td align="right">208079.00</td>
+<td align="right">237488.00</td>
+<td align="right">271409.00</td>
+</tr>
+<tr class="odd">
+<td align="left">latitude</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">40.74</td>
+<td align="right">0.08</td>
+<td align="right">40.50</td>
+<td align="right">40.68</td>
+<td align="right">40.74</td>
+<td align="right">40.82</td>
+<td align="right">40.91</td>
+</tr>
+<tr class="even">
+<td align="left">longitude</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">-73.93</td>
+<td align="right">0.06</td>
+<td align="right">-74.25</td>
+<td align="right">-73.97</td>
+<td align="right">-73.93</td>
+<td align="right">-73.89</td>
+<td align="right">-73.70</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="department-of-sanitation-monthly-tonnage-data-analysis"
+class="section level2">
+<h2>Department of Sanitation Monthly Tonnage Data Analysis</h2>
+<pre class="r"><code>dsny_df &lt;- read_csv(&quot;data/DSNY_Monthly_Tonnage_Data_20231108.csv&quot;)</code></pre>
+<pre><code>## Rows: 23237 Columns: 11
+## ── Column specification ──────────────────────────
+## Delimiter: &quot;,&quot;
+## chr (3): MONTH, BOROUGH, COMMUNITYDISTRICT
+## dbl (8): REFUSETONSCOLLECTED, PAPERTONSCOLLECTED, MGPTONSCOLLECTED, RESORGAN...
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<pre class="r"><code>dsny_df = 
+  dsny_df |&gt; 
+  janitor::clean_names() |&gt; 
+  separate(month, c(&quot;year&quot;, &quot;month&quot;), sep = &quot; / &quot;) |&gt; filter(year == &quot;2023&quot;) |&gt; 
+  select(-communitydistrict, -resorganicstons, -schoolorganictons, -leavesorganictons, -xmastreetons)
+
+skimr::skim_without_charts(dsny_df)</code></pre>
+<table>
+<caption>Data summary</caption>
+<tbody>
+<tr class="odd">
+<td align="left">Name</td>
+<td align="left">dsny_df</td>
+</tr>
+<tr class="even">
+<td align="left">Number of rows</td>
+<td align="left">590</td>
+</tr>
+<tr class="odd">
+<td align="left">Number of columns</td>
+<td align="left">7</td>
+</tr>
+<tr class="even">
+<td align="left">_______________________</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Column type frequency:</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">character</td>
+<td align="left">3</td>
+</tr>
+<tr class="odd">
+<td align="left">numeric</td>
+<td align="left">4</td>
+</tr>
+<tr class="even">
+<td align="left">________________________</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Group variables</td>
+<td align="left">None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: character</strong></p>
+<table>
+<colgroup>
+<col width="19%" />
+<col width="13%" />
+<col width="19%" />
+<col width="5%" />
+<col width="5%" />
+<col width="8%" />
+<col width="12%" />
+<col width="15%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">skim_variable</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="right">min</th>
+<th align="right">max</th>
+<th align="right">empty</th>
+<th align="right">n_unique</th>
+<th align="right">whitespace</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">year</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">4</td>
+<td align="right">4</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="left">month</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="right">2</td>
+<td align="right">0</td>
+<td align="right">10</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="left">borough</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">5</td>
+<td align="right">13</td>
+<td align="right">0</td>
+<td align="right">5</td>
+<td align="right">0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: numeric</strong></p>
+<table style="width:100%;">
+<colgroup>
+<col width="20%" />
+<col width="10%" />
+<col width="14%" />
+<col width="8%" />
+<col width="8%" />
+<col width="6%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="7%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">skim_variable</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="right">p0</th>
+<th align="right">p25</th>
+<th align="right">p50</th>
+<th align="right">p75</th>
+<th align="right">p100</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">refusetonscollected</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">3238.62</td>
+<td align="right">1492.71</td>
+<td align="right">315.6</td>
+<td align="right">2199.43</td>
+<td align="right">3120.30</td>
+<td align="right">4243.60</td>
+<td align="right">7455.8</td>
+</tr>
+<tr class="even">
+<td align="left">papertonscollected</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">346.26</td>
+<td align="right">191.97</td>
+<td align="right">20.0</td>
+<td align="right">219.95</td>
+<td align="right">318.90</td>
+<td align="right">449.60</td>
+<td align="right">1112.3</td>
+</tr>
+<tr class="odd">
+<td align="left">mgptonscollected</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">367.51</td>
+<td align="right">186.19</td>
+<td align="right">31.1</td>
+<td align="right">230.85</td>
+<td align="right">355.65</td>
+<td align="right">472.68</td>
+<td align="right">942.4</td>
+</tr>
+<tr class="even">
+<td align="left">borough_id</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">2.73</td>
+<td align="right">1.18</td>
+<td align="right">1.0</td>
+<td align="right">2.00</td>
+<td align="right">3.00</td>
+<td align="right">4.00</td>
+<td align="right">5.0</td>
+</tr>
+</tbody>
+</table>
+</div>
 
 
 

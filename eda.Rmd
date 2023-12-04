@@ -5,6 +5,35 @@ date: '2023-12-01'
 ---
 
 ```{r setup, include=FALSE}
+library(tidyverse)
+
 knitr::opts_chunk$set(echo = TRUE)
 ```
+
+## NYC Rodent Inspection Data Summary
+
+```{r}
+rodent_inspec_df <- read_csv("data/Rodent Inspection Data - 2023.csv")
+
+rodent_inspec_df = 
+  rodent_inspec_df |> 
+  janitor::clean_names() |> select(-job_id, -job_ticket_or_work_order_id, -job_progress, -bbl, -house_number, -street_name, -block, -lot, -approved_date, -location, -community_board, -council_district, -census_tract, -bin, -nta)
+
+skimr::skim_without_charts(rodent_inspec_df)
+```
+
+## Department of Sanitation Monthly Tonnage Data Summary
+
+```{r}
+dsny_df <- read_csv("data/DSNY_Monthly_Tonnage_Data_20231108.csv")
+
+dsny_df = 
+  dsny_df |> 
+  janitor::clean_names() |> 
+  separate(month, c("year", "month"), sep = " / ") |> filter(year == "2023") |> 
+  select(-communitydistrict, -resorganicstons, -schoolorganictons, -leavesorganictons, -xmastreetons)
+
+skimr::skim_without_charts(dsny_df)
+```
+
 
