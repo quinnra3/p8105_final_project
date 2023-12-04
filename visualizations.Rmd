@@ -54,11 +54,14 @@ rodent_inspec_df =
   rodent_inspec_df |> 
   janitor::clean_names() |> select(-job_id, -job_ticket_or_work_order_id, -job_progress, -bbl, -house_number, -street_name, -block, -lot, -approved_date, -location, -community_board, -council_district, -census_tract, -bin, -nta)
 
-total_rat_df = merge(dsny_df, rodent_inspec_df)
+#total_rat_df = merge(dsny_df, rodent_inspec_df)
+total_rat_df2 = left_join(dsny_df, rodent_inspec_df, by = "borough")
 ```
 
 
 ```{r}
+## bar graph 
+
 rat_table = 
   total_rat_df |> 
   data.frame(
@@ -78,5 +81,36 @@ ggplot(rat_activity_counts, aes(x = borough, y = count)) +
        x = "Borough",
        y = "Frequency") + 
   scale_y_continuous(labels = scales::comma_format(scale = 1e+0))
+```
+
+
+## Table 2
+```{r}
+rat_month_table = 
+  total_rat_df2 |>
+  group_by(month) |>
+  data.frame(
+    result = c("Passed", "Rat Activity", "Stoppage done", "Bait applied", "Cleanup done", "Failed for Other R", "Monitoring visit")
+  ) |> 
+  filter(result == "Rat Activity") |>
+  summarise(count = n()) 
+  
+
+rat_month_counts <- total_rat_df2 |> 
+  filter(result == "Rat Activity") |> 
+  group_by(month) |> 
+  summarise(count = n())  
+
+
+ rat_month_plot = 
+   rat_month_counts |> 
+   ggplot(aes(x = month, y = count)) +
+  geom_bar(stat = "identity", fill = "lightgreen") +
+  labs(title = "Frequency of Rat Activity by Month",
+       x = "Month",
+       y = "Frequency") + 
+  scale_y_continuous(labels = scales::comma_format(scale = 1e+0))
+
+
 ```
 
