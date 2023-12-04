@@ -276,7 +276,7 @@ $(document).ready(function () {
 </div>
 
 
-<p>Questions:</p>
+<p>Questions: wynter quinn laylah</p>
 <ol style="list-style-type: decimal">
 <li>What is the overall frequency of rat sightings?
 <ol style="list-style-type: lower-alpha">
@@ -305,6 +305,59 @@ sightings</li>
 <li>Bar Chart</li>
 </ol></li>
 </ol>
+<div id="loading-data-sets" class="section level1">
+<h1>Loading Data Sets</h1>
+<pre class="r"><code>dsny_df &lt;- read_csv(&quot;data/DSNY_Monthly_Tonnage_Data_20231108.csv&quot;) </code></pre>
+<pre><code>## Rows: 23237 Columns: 11
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: &quot;,&quot;
+## chr (3): MONTH, BOROUGH, COMMUNITYDISTRICT
+## dbl (8): REFUSETONSCOLLECTED, PAPERTONSCOLLECTED, MGPTONSCOLLECTED, RESORGAN...
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<pre class="r"><code>dsny_df = 
+  dsny_df |&gt; 
+  janitor::clean_names() |&gt; 
+  separate(month, c(&quot;year&quot;, &quot;month&quot;), sep = &quot; / &quot;) |&gt; filter(year == &quot;2023&quot;) |&gt; 
+  select(-communitydistrict, -resorganicstons, -schoolorganictons, -leavesorganictons, -xmastreetons)
+
+
+rodent_inspec_df &lt;- read_csv(&quot;data/Rodent Inspection Data - 2023.csv&quot;)</code></pre>
+<pre><code>## Rows: 17578 Columns: 25
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: &quot;,&quot;
+## chr (12): INSPECTION_TYPE, JOB_ID, BLOCK, LOT, HOUSE_NUMBER, STREET_NAME, BO...
+## dbl (13): JOB_TICKET_OR_WORK_ORDER_ID, JOB_PROGRESS, BBL, BORO_CODE, ZIP_COD...
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<pre class="r"><code>rodent_inspec_df = 
+  rodent_inspec_df |&gt; 
+  janitor::clean_names() |&gt; select(-job_id, -job_ticket_or_work_order_id, -job_progress, -bbl, -house_number, -street_name, -block, -lot, -approved_date, -location, -community_board, -council_district, -census_tract, -bin, -nta)
+
+total_rat_df = merge(dsny_df, rodent_inspec_df)</code></pre>
+<pre class="r"><code>rat_table = 
+  total_rat_df |&gt; 
+  data.frame(
+    borough = c(&quot;Manhattan&quot;, &quot;Brooklyn&quot;, &quot;Bronx&quot;, &quot;Queens&quot;, &quot;Staten Island&quot;),
+    result = c(&quot;Passed&quot;, &quot;Rat Activity&quot;, &quot;Stoppage done&quot;, &quot;Bait applied&quot;, &quot;Cleanup done&quot;, &quot;Failed for Other R&quot;, &quot;Monitoring visit&quot;)
+  ) 
+
+rat_activity_counts &lt;- total_rat_df |&gt; 
+  filter(result == &quot;Rat Activity&quot;) |&gt; 
+  group_by(borough) |&gt; 
+  summarise(count = n())  
+view(rat_activity_counts)
+
+ggplot(rat_activity_counts, aes(x = borough, y = count)) +
+  geom_bar(stat = &quot;identity&quot;, fill = &quot;skyblue&quot;) +
+  labs(title = &quot;Frequency of Rat Activity by Borough&quot;,
+       x = &quot;Borough&quot;,
+       y = &quot;Frequency&quot;) + 
+  scale_y_continuous(labels = scales::comma_format(scale = 1e+0))</code></pre>
+<p><img src="visualizations_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+</div>
 
 
 
