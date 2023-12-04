@@ -20,9 +20,10 @@ Cleaning and tidying the datasets:
 ```{r}
 ## DSNY Monthly Tonnage Dataset 
 
-dsny_df <- read_csv("data/DSNY_Monthly_Tonnage_Data_20231108.csv")
+dsny_df <- read_csv("data/DSNY_Monthly_Tonnage_Data_20231108.csv") 
 
-dsny_df |> 
+dsny_df = 
+  dsny_df |> 
   janitor::clean_names() |> 
   separate(month, c("year", "month"), sep = " / ") |> filter(year == "2023") |> 
   select(-communitydistrict, -resorganicstons, -schoolorganictons, -leavesorganictons, -xmastreetons)
@@ -33,35 +34,26 @@ dsny_df |>
 
 rodent_inspec_df <- read_csv("data/Rodent Inspection Data - 2023.csv")
 
-rodent_inspec_df |> janitor::clean_names() |> select(-job_id, -job_ticket_or_work_order_id, -job_progress, -bbl, -house_number, -street_name, -block, -lot, -approved_date, -location, -community_board, -council_district, -census_tract, -bin, -nta)
+rodent_inspec_df = 
+  rodent_inspec_df |> 
+  janitor::clean_names() |> select(-job_id, -job_ticket_or_work_order_id, -job_progress, -bbl, -house_number, -street_name, -block, -lot, -approved_date, -location, -community_board, -council_district, -census_tract, -bin, -nta)
 ```
 
 ```{r}
 ## Transit App Rodent Reports 
 
-rodent_app_df <- read_csv("data/Transit app rat reports - 2023-10-08 to 2023-11-07.csv")
+rodent_app_df <- read_csv("data/Transit app rat reports - 2023-10-08 to 2023-11-07.csv") 
 
 ```
 
-=======
-library(tidyverse)
+Combining all 3 datasets: 
 
-knitr::opts_chunk$set(
-	echo = TRUE,
-	warning = FALSE,
-	message = FALSE, 
-	fig.width = 8, 
-  fig.height = 6,
-  out.width = "90%"
-)
-theme_set(theme_minimal() + theme(legend.position = "bottom"))
-options(
-  ggplot2.continuous.colour = "viridis",
-  ggplot2.continuous.fill = "viridis"
-)
-
-scale_colour_discrete = scale_colour_viridis_d
-scale_fill_discrete = scale_fill_viridis_d
+```{r}
+total_rat_df = left_join(dsny_df, rodent_app_df, by = "borough")
 ```
 
->>>>>>> 64ba6add6378960c451ce432e555ab8c60cf31d9
+```{r}
+final_rat_df = merge(dsny_df,rodent_inspec_df)
+```
+
+
