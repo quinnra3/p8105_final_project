@@ -6,6 +6,15 @@ date: '2023-12-01'
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+
+library(ggplot2)
+library(knitr)
+library(readr)
+library(readxl)
+library(tidyverse)
+library(tidyr)
+library(dplyr)
+library(stringr)
 ```
 
 Questions: wynter quinn laylah
@@ -25,3 +34,49 @@ Questions: wynter quinn laylah
     
 5. Which borough has the most monthly reported rat sightings?
     a. Bar Chart 
+<<<<<<< HEAD
+ 
+    
+# Loading Data Sets
+```{r}
+dsny_df <- read_csv("data/DSNY_Monthly_Tonnage_Data_20231108.csv") 
+
+dsny_df = 
+  dsny_df |> 
+  janitor::clean_names() |> 
+  separate(month, c("year", "month"), sep = " / ") |> filter(year == "2023") |> 
+  select(-communitydistrict, -resorganicstons, -schoolorganictons, -leavesorganictons, -xmastreetons)
+
+
+rodent_inspec_df <- read_csv("data/Rodent Inspection Data - 2023.csv")
+
+rodent_inspec_df = 
+  rodent_inspec_df |> 
+  janitor::clean_names() |> select(-job_id, -job_ticket_or_work_order_id, -job_progress, -bbl, -house_number, -street_name, -block, -lot, -approved_date, -location, -community_board, -council_district, -census_tract, -bin, -nta)
+
+total_rat_df = merge(dsny_df, rodent_inspec_df)
+```
+
+
+```{r}
+rat_table = 
+  total_rat_df |> 
+  data.frame(
+    borough = c("Manhattan", "Brooklyn", "Bronx", "Queens", "Staten Island"),
+    result = c("Passed", "Rat Activity", "Stoppage done", "Bait applied", "Cleanup done", "Failed for Other R", "Monitoring visit")
+  ) 
+
+rat_activity_counts <- total_rat_df |> 
+  filter(result == "Rat Activity") |> 
+  group_by(borough) |> 
+  summarise(count = n())  
+view(rat_activity_counts)
+
+ggplot(rat_activity_counts, aes(x = borough, y = count)) +
+  geom_bar(stat = "identity", fill = "skyblue") +
+  labs(title = "Frequency of Rat Activity by Borough",
+       x = "Borough",
+       y = "Frequency") + 
+  scale_y_continuous(labels = scales::comma_format(scale = 1e+0))
+```
+

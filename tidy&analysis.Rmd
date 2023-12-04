@@ -42,6 +42,7 @@ Combining all 3 datasets:
 
 ```{r}
 total_rat_df = merge(dsny_df, rodent_inspec_df)
+
 ```
 
 ## visualizations 
