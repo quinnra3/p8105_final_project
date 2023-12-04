@@ -10,7 +10,7 @@ library(tidyverse)
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## NYC Rodent Inspection Data Analysis
+## NYC Rodent Inspection Data Summary
 
 ```{r}
 rodent_inspec_df <- read_csv("data/Rodent Inspection Data - 2023.csv")
@@ -22,7 +22,7 @@ rodent_inspec_df =
 skimr::skim_without_charts(rodent_inspec_df)
 ```
 
-## Department of Sanitation Monthly Tonnage Data Analysis
+## Department of Sanitation Monthly Tonnage Data Summary
 
 ```{r}
 dsny_df <- read_csv("data/DSNY_Monthly_Tonnage_Data_20231108.csv")
