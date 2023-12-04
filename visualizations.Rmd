@@ -8,3 +8,20 @@ date: '2023-12-01'
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+Questions:
+
+1. What is the overall frequency of rat sightings? 
+    a. Bar Chart or Histogram of rat frequency for each month
+    
+2. What is the distribution of rat sightings across different boroughs in NYC?
+    a. Bar Chart comparing total number of rat sightings in each borough using facet wrap
+    
+3. Are there any seasonal trends or patterns in rat sightings?
+    a. Line Graph to display the seasonal variation in rat sightings
+    
+4. Is there any correlation between monthly collection of garbage tonnages that the NYC Department of Sanitation collects and the prevalence of rat sightings?
+    a. Scatter Plot of monthly garbage tonnage against number of rat sightings 
+    b. Include line of best fit
+    
+5. Which borough has the most monthly reported rat sightings?
+    a. Bar Chart 
