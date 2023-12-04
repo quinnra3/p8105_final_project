@@ -44,13 +44,24 @@ Combining all 3 datasets:
 total_rat_df = merge(dsny_df, rodent_inspec_df)
 ```
 
-## visualizations 
+Cleaning the total_rat_df
 
 ```{r}
-## total rat frequency in new york --> use plotly? 
-
-## total trash collected and total rats found by borough --> bar graph?
-
+#total_rat_df |> 
+ # mutate(
+   # longitude = as.numeric(longitude),
+   # latitude = as.numeric(latitude),
+    #result = as.character(result),
+    #activity = case_when(rat == TRUE ~ "Rat Activity",
+                       ##  passed == TRUE ~ "Passed",
+                         #stoppage_done == TRUE ~ "Stoppage done",
+                       #  bait_applied == TRUE ~ "Bait applied",
+                        ## cleanup_done == TRUE ~ "Cleanup done", 
+                         #failed == TRUE ~ "Failed for Other R",
+                         #monitoring == TRUE ~ "Monitoring visit")
+    
+                         
+ # )
 
 ```
 
