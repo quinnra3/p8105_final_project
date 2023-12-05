@@ -72,12 +72,13 @@ rodent_tidy =
 total_rat_df = merge(dsny_df, rodent_inspec_df)
 
 rat_merge_df = merge(dsny_df, rodent_tidy)
-
 ```
 
 
 ## Table 1
 ```{r}
+## bar graph 
+
 rat_table = 
   total_rat_df |> 
   data.frame(

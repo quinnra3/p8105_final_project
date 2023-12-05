@@ -354,7 +354,9 @@ total_rat_df = merge(dsny_df, rodent_inspec_df)
 rat_merge_df = merge(dsny_df, rodent_tidy)</code></pre>
 <div id="table-1" class="section level2">
 <h2>Table 1</h2>
-<pre class="r"><code>rat_table = 
+<pre class="r"><code>## bar graph 
+
+rat_table = 
   total_rat_df |&gt; 
   data.frame(
     borough = c(&quot;Manhattan&quot;, &quot;Brooklyn&quot;, &quot;Bronx&quot;, &quot;Queens&quot;, &quot;Staten Island&quot;),
