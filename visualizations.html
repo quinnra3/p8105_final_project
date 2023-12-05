@@ -319,7 +319,8 @@ sightings</li>
 <pre class="r"><code>dsny_df = 
   dsny_df |&gt; 
   janitor::clean_names() |&gt; 
-  separate(month, c(&quot;year&quot;, &quot;month&quot;), sep = &quot; / &quot;) |&gt; filter(year == &quot;2023&quot;) |&gt; 
+  separate(month, c(&quot;year&quot;, &quot;month&quot;), sep = &quot; / &quot;) |&gt; 
+  filter(year == &quot;2023&quot;) |&gt; 
   select(-communitydistrict, -resorganicstons, -schoolorganictons, -leavesorganictons, -xmastreetons)
 
 
@@ -334,9 +335,25 @@ rodent_inspec_df &lt;- read_csv(&quot;data/Rodent Inspection Data - 2023.csv&quo
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 <pre class="r"><code>rodent_inspec_df = 
   rodent_inspec_df |&gt; 
-  janitor::clean_names() |&gt; select(-job_id, -job_ticket_or_work_order_id, -job_progress, -bbl, -house_number, -street_name, -block, -lot, -approved_date, -location, -community_board, -council_district, -census_tract, -bin, -nta)
+  janitor::clean_names() |&gt; 
+  select(-job_id, -job_ticket_or_work_order_id, -job_progress, -bbl, -house_number, -street_name, -block, -lot, -approved_date, -location, -community_board, -council_district, -census_tract, -bin, -nta)
 
-total_rat_df = merge(dsny_df, rodent_inspec_df)</code></pre>
+rodent_tidy = 
+  rodent_inspec_df |&gt;
+  mutate(inspection_date = parse_date_time(inspection_date, orders = &quot;mdy HM&quot;),
+         day = day(inspection_date), 
+         month = sprintf(&quot;%02d&quot;, month(inspection_date)), 
+         year = year(inspection_date),  
+         hour = hour(inspection_date),  
+         minute = minute(inspection_date)) |&gt; 
+  select(-day, -hour, -minute, -boro_code)
+  
+
+total_rat_df = merge(dsny_df, rodent_inspec_df)
+
+rat_merge_df = merge(dsny_df, rodent_tidy)</code></pre>
+<div id="table-1" class="section level2">
+<h2>Table 1</h2>
 <pre class="r"><code>rat_table = 
   total_rat_df |&gt; 
   data.frame(
@@ -357,6 +374,25 @@ ggplot(rat_activity_counts, aes(x = borough, y = count)) +
        y = &quot;Frequency&quot;) + 
   scale_y_continuous(labels = scales::comma_format(scale = 1e+0))</code></pre>
 <p><img src="visualizations_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+</div>
+<div id="table-2" class="section level2">
+<h2>Table 2</h2>
+<pre class="r"><code>rat_activity_counts =
+  rat_merge_df |&gt; 
+  filter(result == &quot;Rat Activity&quot;) |&gt; 
+  group_by(month) |&gt; 
+  summarise(count = n()) 
+
+view(rat_activity_counts)
+
+ggplot(rat_activity_counts, aes(x = month, y = count)) +
+  geom_bar(stat = &quot;identity&quot;, fill = &quot;violet&quot;) +
+  labs(title = &quot;Frequency of Rat Activity by Month&quot;,
+       x = &quot;Month&quot;,
+       y = &quot;Frequency&quot;) + 
+  scale_y_continuous(labels = scales::comma_format(scale = 1e+0))</code></pre>
+<p><img src="visualizations_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+</div>
 </div>
 
 

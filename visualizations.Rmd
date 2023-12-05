@@ -15,6 +15,8 @@ library(tidyverse)
 library(tidyr)
 library(dplyr)
 library(stringr)
+library(scales)
+library(lubridate)
 ```
 
 Questions: wynter quinn laylah
@@ -34,7 +36,7 @@ Questions: wynter quinn laylah
     
 5. Which borough has the most monthly reported rat sightings?
     a. Bar Chart 
-<<<<<<< HEAD
+    
  
     
 # Loading Data Sets
@@ -44,7 +46,8 @@ dsny_df <- read_csv("data/DSNY_Monthly_Tonnage_Data_20231108.csv")
 dsny_df = 
   dsny_df |> 
   janitor::clean_names() |> 
-  separate(month, c("year", "month"), sep = " / ") |> filter(year == "2023") |> 
+  separate(month, c("year", "month"), sep = " / ") |> 
+  filter(year == "2023") |> 
   select(-communitydistrict, -resorganicstons, -schoolorganictons, -leavesorganictons, -xmastreetons)
 
 
@@ -52,12 +55,28 @@ rodent_inspec_df <- read_csv("data/Rodent Inspection Data - 2023.csv")
 
 rodent_inspec_df = 
   rodent_inspec_df |> 
-  janitor::clean_names() |> select(-job_id, -job_ticket_or_work_order_id, -job_progress, -bbl, -house_number, -street_name, -block, -lot, -approved_date, -location, -community_board, -council_district, -census_tract, -bin, -nta)
+  janitor::clean_names() |> 
+  select(-job_id, -job_ticket_or_work_order_id, -job_progress, -bbl, -house_number, -street_name, -block, -lot, -approved_date, -location, -community_board, -council_district, -census_tract, -bin, -nta)
+
+rodent_tidy = 
+  rodent_inspec_df |>
+  mutate(inspection_date = parse_date_time(inspection_date, orders = "mdy HM"),
+         day = day(inspection_date), 
+         month = sprintf("%02d", month(inspection_date)), 
+         year = year(inspection_date),  
+         hour = hour(inspection_date),  
+         minute = minute(inspection_date)) |> 
+  select(-day, -hour, -minute, -boro_code)
+  
 
 total_rat_df = merge(dsny_df, rodent_inspec_df)
+
+rat_merge_df = merge(dsny_df, rodent_tidy)
+
 ```
 
 
+## Table 1
 ```{r}
 rat_table = 
   total_rat_df |> 
@@ -76,6 +95,26 @@ ggplot(rat_activity_counts, aes(x = borough, y = count)) +
   geom_bar(stat = "identity", fill = "skyblue") +
   labs(title = "Frequency of Rat Activity by Borough",
        x = "Borough",
+       y = "Frequency") + 
+  scale_y_continuous(labels = scales::comma_format(scale = 1e+0))
+```
+
+
+## Table 2
+
+```{r}
+rat_activity_counts =
+  rat_merge_df |> 
+  filter(result == "Rat Activity") |> 
+  group_by(month) |> 
+  summarise(count = n()) 
+
+view(rat_activity_counts)
+
+ggplot(rat_activity_counts, aes(x = month, y = count)) +
+  geom_bar(stat = "identity", fill = "violet") +
+  labs(title = "Frequency of Rat Activity by Month",
+       x = "Month",
        y = "Frequency") + 
   scale_y_continuous(labels = scales::comma_format(scale = 1e+0))
 ```
