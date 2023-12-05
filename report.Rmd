@@ -8,3 +8,5 @@ date: '2023-12-01'
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+## Motivation
+As all New Yorkers know, there is a serious rat problem in the city. We see them scurrying on the subway tracks and running around street corners. For this project, we wanted to look in to the rat frequency in New York. How many rats are there in New York? Which borough has the most rats? Is rat frequency associated with trash tonnage? Our project answers these questions in the following analysis. 
