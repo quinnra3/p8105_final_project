@@ -120,3 +120,31 @@ ggplot(rat_activity_counts, aes(x = month, y = count)) +
   scale_y_continuous(labels = scales::comma_format(scale = 1e+0))
 ```
 
+## Table 3
+
+```{r}
+
+```
+
+
+## Table 4
+
+```{r}
+rat_activity_counts =
+  rat_merge_df |> 
+  filter(result == "Rat Activity") |> 
+  group_by(month, refusetonscollected) |>
+  summarise(count = n())
+
+view(rat_activity_counts)
+
+ggplot(rat_activity_counts, aes(x = month, y = refusetonscollected, color = count)) +
+  geom_boxplot() +
+  labs(title = "Correlation between Trash Tonnage and Rat Sightings by Month",
+       x = "Trash Tonnage",
+       y = "Sighting") +
+  scale_y_continuous(labels = scales::comma_format(scale = 1e+0))
+
+## Ask if we should add color to the plot
+```
+

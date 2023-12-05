@@ -395,6 +395,34 @@ ggplot(rat_activity_counts, aes(x = month, y = count)) +
   scale_y_continuous(labels = scales::comma_format(scale = 1e+0))</code></pre>
 <p><img src="visualizations_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 </div>
+<div id="table-3" class="section level2">
+<h2>Table 3</h2>
+</div>
+<div id="table-4" class="section level2">
+<h2>Table 4</h2>
+<pre class="r"><code>rat_activity_counts =
+  rat_merge_df |&gt; 
+  filter(result == &quot;Rat Activity&quot;) |&gt; 
+  group_by(month, refusetonscollected) |&gt;
+  summarise(count = n())</code></pre>
+<pre><code>## `summarise()` has grouped output by &#39;month&#39;. You can override using the
+## `.groups` argument.</code></pre>
+<pre class="r"><code>view(rat_activity_counts)
+
+ggplot(rat_activity_counts, aes(x = month, y = refusetonscollected, color = count)) +
+  geom_boxplot() +
+  labs(title = &quot;Correlation between Trash Tonnage and Rat Sightings by Month&quot;,
+       x = &quot;Trash Tonnage&quot;,
+       y = &quot;Sighting&quot;) +
+  scale_y_continuous(labels = scales::comma_format(scale = 1e+0))</code></pre>
+<pre><code>## Warning: The following aesthetics were dropped during statistical transformation: colour
+## ℹ This can happen when ggplot fails to infer the correct grouping structure in
+##   the data.
+## ℹ Did you forget to specify a `group` aesthetic or to convert a numerical
+##   variable into a factor?</code></pre>
+<p><img src="visualizations_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<pre class="r"><code>## Ask if we should add color to the plot</code></pre>
+</div>
 </div>
 
 
