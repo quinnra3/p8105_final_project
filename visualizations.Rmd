@@ -123,9 +123,12 @@ ggplot(rat_activity_counts, aes(x = month, y = count)) +
 ## Table 3
 
 ```{r}
-
+ggplot(rat_activity_counts, aes(x = month, y = count)) + 
+  geom_point() +
+  labs(title = "Frequency of Rat Activity by Month",
+       x = "Month",
+       y = "Frequency")
 ```
-
 
 ## Table 4
 
@@ -133,19 +136,14 @@ ggplot(rat_activity_counts, aes(x = month, y = count)) +
 rat_activity_counts =
   rat_merge_df |> 
   filter(result == "Rat Activity") |> 
-  group_by(month, refusetonscollected) |>
-  summarise(count = n())
-
-view(rat_activity_counts)
+  group_by(month, refusetonscollected) |> 
+  summarise(count = n()) 
 
 ggplot(rat_activity_counts, aes(x = month, y = refusetonscollected, color = count)) +
-  geom_boxplot() +
+  geom_boxplot(color="red",fill="orange") +
   labs(title = "Correlation between Trash Tonnage and Rat Sightings by Month",
-       x = "Trash Tonnage",
-       y = "Sighting") +
-  scale_y_continuous(labels = scales::comma_format(scale = 1e+0))
-
-## Ask if we should add color to the plot
+       x = "Trash Collected (by Tonnage)",
+       y = "Rat Sightings") 
 ```
 
 ## Transit App Graph 
