@@ -423,6 +423,25 @@ ggplot(rat_activity_counts, aes(x = month, y = refusetonscollected, color = coun
 <p><img src="visualizations_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <pre class="r"><code>## Ask if we should add color to the plot</code></pre>
 </div>
+<div id="transit-app-graph" class="section level2">
+<h2>Transit App Graph</h2>
+<pre class="r"><code>app_data &lt;- read_csv(&quot;data/Transit app rat reports - 2023-10-08 to 2023-11-07.csv&quot;)</code></pre>
+<pre><code>## Rows: 387 Columns: 7
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: &quot;,&quot;
+## chr (3): station_name, borough, lines_served
+## dbl (4): station_id, so_many, one_or_two, none
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<pre class="r"><code>ggplot(app_data, aes(x = station_id, y = one_or_two, color = borough)) + 
+  geom_point() + 
+  geom_smooth(se = FALSE) + 
+  facet_grid(. ~ borough) + 
+  theme(axis.text.x = element_text(angle = 60, hjust = 1))</code></pre>
+<pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula = &#39;y ~ x&#39;</code></pre>
+<p><img src="visualizations_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+</div>
 </div>
 
 
