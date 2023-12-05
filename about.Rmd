@@ -9,14 +9,17 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## add pics of us
-About Wynter:
 
-Wynter is a first year MS in Epidemiology candidate here at Mailman. She has a BS in Biology and a minor in Public Health Analytics from Thomas Jefferson University in Philadelphia, PA. Wynter is interested in infectious disease epidemiology and wants to help prevent the next pandemic.She hopes to continue her studies in epidemiology and public health by pursing a PhD. 
+**About Wynter:**
 
-
-About Laylah:
+Wynter is a first year MS in Epidemiology candidate here at Mailman. She has a BS in Biology and a minor in Public Health Analytics from Thomas Jefferson University in Philadelphia, PA. Wynter is interested in infectious disease epidemiology and wants to help prevent the next pandemic. She hopes to continue her studies in epidemiology and public health by pursing a PhD. 
 
 
-About Quinn: 
+**About Laylah:**
+
+Laylah is a first year MS student in Epidemiology at the Mailman School of Public Health. She received her BS in Psychology from Drexel University in Philadelphia, PA and worked as a Project Coordinator at a Neuropsychology research lab focusing on individuals with neurodevelopmental disorders and brain development. Laylah is interested in pursuing Psychiatric Epidemiology in hopes of addressing mental health disparities in underrepresented populations and minority communities. 
+
+
+**About Quinn:** 
 
 hello!!!! 

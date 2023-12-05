@@ -279,72 +279,52 @@ $(document).ready(function () {
 <p>Cleaning and tidying the datasets:</p>
 <pre class="r"><code>## DSNY Monthly Tonnage Dataset 
 
-dsny_df &lt;- read_csv(&quot;data/DSNY_Monthly_Tonnage_Data_20231108.csv&quot;)</code></pre>
+dsny_df &lt;- read_csv(&quot;data/DSNY_Monthly_Tonnage_Data_20231108.csv&quot;) </code></pre>
 <pre><code>## Rows: 23237 Columns: 11
-## ── Column specification ────────────────────────────────────────────────────────
+## ── Column specification ───────────────────────────────────────
 ## Delimiter: &quot;,&quot;
 ## chr (3): MONTH, BOROUGH, COMMUNITYDISTRICT
 ## dbl (8): REFUSETONSCOLLECTED, PAPERTONSCOLLECTED, MGPTONSCOLLECTED, RESORGAN...
 ## 
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-<pre class="r"><code>dsny_df |&gt; 
+<pre class="r"><code>dsny_df = 
+  dsny_df |&gt; 
   janitor::clean_names() |&gt; 
   separate(month, c(&quot;year&quot;, &quot;month&quot;), sep = &quot; / &quot;) |&gt; filter(year == &quot;2023&quot;) |&gt; 
   select(-communitydistrict, -resorganicstons, -schoolorganictons, -leavesorganictons, -xmastreetons)</code></pre>
-<pre><code>## # A tibble: 590 × 7
-##    year  month borough   refusetonscollected papertonscollected mgptonscollected
-##    &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;                   &lt;dbl&gt;              &lt;dbl&gt;            &lt;dbl&gt;
-##  1 2023  01    Brooklyn                2885.               285.             233.
-##  2 2023  01    Bronx                   2852.               275.             340.
-##  3 2023  01    Bronx                   2444.               293.             338.
-##  4 2023  01    Brooklyn                4385.               257.             435 
-##  5 2023  01    Manhattan               2554.               249.             231.
-##  6 2023  02    Bronx                   2766.               164.             270.
-##  7 2023  02    Brooklyn                5121.               569.             382.
-##  8 2023  02    Bronx                   3002.               244.             453.
-##  9 2023  02    Manhattan               3869.               344.             408.
-## 10 2023  03    Brooklyn                3320                410.             430 
-## # ℹ 580 more rows
-## # ℹ 1 more variable: borough_id &lt;dbl&gt;</code></pre>
 <pre class="r"><code>## Rodent Inspection Dataset 
 
 rodent_inspec_df &lt;- read_csv(&quot;data/Rodent Inspection Data - 2023.csv&quot;)</code></pre>
 <pre><code>## Rows: 17578 Columns: 25
-## ── Column specification ────────────────────────────────────────────────────────
+## ── Column specification ───────────────────────────────────────
 ## Delimiter: &quot;,&quot;
 ## chr (12): INSPECTION_TYPE, JOB_ID, BLOCK, LOT, HOUSE_NUMBER, STREET_NAME, BO...
 ## dbl (13): JOB_TICKET_OR_WORK_ORDER_ID, JOB_PROGRESS, BBL, BORO_CODE, ZIP_COD...
 ## 
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-<pre class="r"><code>rodent_inspec_df |&gt; janitor::clean_names() |&gt; select(-job_id, -job_ticket_or_work_order_id, -job_progress, -bbl, -house_number, -street_name, -block, -lot, -approved_date, -location, -community_board, -council_district, -census_tract, -bin, -nta)</code></pre>
-<pre><code>## # A tibble: 17,578 × 10
-##    inspection_type boro_code zip_code x_coord y_coord latitude longitude borough
-##    &lt;chr&gt;               &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;  
-##  1 BAIT                    2    10459 1012637  241592     40.8     -73.9 Bronx  
-##  2 Initial                 3    11236 1013319  175397     40.6     -73.9 Brookl…
-##  3 Initial                 1    10021  997820  219476     40.8     -74.0 Manhat…
-##  4 Initial                 2    10456 1011476  240992     40.8     -73.9 Bronx  
-##  5 Initial                 3    11211  999602  200156     40.7     -73.9 Brookl…
-##  6 Initial                 1    10028  996186  222843     40.8     -74.0 Manhat…
-##  7 BAIT                    3    11216  997073  188002     40.7     -74.0 Brookl…
-##  8 Initial                 1    10009  990295  202117     40.7     -74.0 Manhat…
-##  9 Compliance              2    10455 1006906  237230     40.8     -73.9 Bronx  
-## 10 Initial                 1    10023  990592  222254     40.8     -74.0 Manhat…
-## # ℹ 17,568 more rows
-## # ℹ 2 more variables: inspection_date &lt;chr&gt;, result &lt;chr&gt;</code></pre>
-<pre class="r"><code>## Transit App Rodent Reports 
+<pre class="r"><code>rodent_inspec_df = 
+  rodent_inspec_df |&gt; 
+  janitor::clean_names() |&gt; select(-job_id, -job_ticket_or_work_order_id, -job_progress, -bbl, -house_number, -street_name, -block, -lot, -approved_date, -location, -community_board, -council_district, -census_tract, -bin, -nta)</code></pre>
+<p>Combining all 3 datasets:</p>
+<pre class="r"><code>total_rat_df = merge(dsny_df, rodent_inspec_df)</code></pre>
+<p>Combining all 3 datasets, take 2:</p>
+<pre class="r"><code>total_rat_df2 = left_join(dsny_df, rodent_inspec_df, by = &quot;borough&quot;)</code></pre>
+<pre><code>## Warning in left_join(dsny_df, rodent_inspec_df, by = &quot;borough&quot;): Detected an unexpected many-to-many relationship between `x`
+## and `y`.
+## ℹ Row 1 of `x` matches multiple rows in `y`.
+## ℹ Row 1 of `y` matches multiple rows in `x`.
+## ℹ If a many-to-many relationship is expected, set
+##   `relationship = &quot;many-to-many&quot;` to silence this warning.</code></pre>
+<div id="visualizations" class="section level2">
+<h2>visualizations</h2>
+<pre class="r"><code>## total rat frequency in new york --&gt; use plotly? 
 
-rodent_app_df &lt;- read_csv(&quot;data/Transit app rat reports - 2023-10-08 to 2023-11-07.csv&quot;)</code></pre>
-<pre><code>## Rows: 387 Columns: 7
-## ── Column specification ────────────────────────────────────────────────────────
-## Delimiter: &quot;,&quot;
-## chr (3): station_name, borough, lines_served
-## dbl (4): station_id, so_many, one_or_two, none
-## 
-## ℹ Use `spec()` to retrieve the full column specification for this data.
-## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+## total trash collected and total rats found by borough --&gt; bar graph?</code></pre>
+<p>======= &gt;&gt;&gt;&gt;&gt;&gt;&gt;
+6134233579c6b5bf3a7516915aade99dfff26d21</p>
+</div>
 
 
 

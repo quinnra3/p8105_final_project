@@ -1,5 +1,5 @@
 ---
-title: "Final Project Proposal"
+title: "Proposal"
 author: "Quinn Anderson, Laylah Jones, Wynter Henry"
 date: '`r format(Sys.time(), "%Y-%m-%d")`'
 output: github_document
