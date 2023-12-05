@@ -8,5 +8,21 @@ date: '2023-12-01'
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Motivation
+## Motivation and Questions 
 As all New Yorkers know, there is a serious rat problem in the city. We see them scurrying on the subway tracks and running around street corners. For this project, we wanted to look in to the rat frequency in New York. How many rats are there in New York? Which borough has the most rats? Is rat frequency associated with trash tonnage? Our project answers these questions in the following analysis. 
+
+## Related Work
+The New York City rat problem is constantly covered in news outlets, and we wanted to further explore this issue to see if the problem is really as severe as it is presented to be. Specific articles that inspired us were "New York’s Rats Have Already Won" by Xochitl Gonzalez published in the *The Atlantic* and "There Are Now 3 Million Rats in NYC, a 50% Increase Since 2010" published by MMPC. After looking at NYC Health's open data, we found a dataset detailing the numbers behind New York's rat problem.
+
+## Data
+We obtained our three datasets (Rodent Inspection Data and DSNY Monthly Tonnage Data 2023) from NYC Health's open data website. We cleaned the data by removing values and columns that were not necessary for our research question and data analysis. The main function we used for this was select() and mutate(), where we were easily able to remove and change columns. We originally had an additional dataset that showed rat sightings, but due to the size of the datasets, we could not combine all three and opted to combine the Rodent Inspection Data and the DSNY Monthly Tonnage Data 2023 datasets. 
+
+## Exploratory Analysis
+
+## Statistical Testing: ANOVA 
+
+## Discussion and Conclusion 
+
+
+
+ 
