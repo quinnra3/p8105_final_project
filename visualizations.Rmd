@@ -105,7 +105,7 @@ ggplot(rat_activity_counts, aes(x = month, y = count)) +
 ```{r}
 ggplot(rat_activity_counts, aes(x = month, y = count)) + 
   geom_point() +
-  labs(title = "Frequency of Rat Activity by Month",
+  labs(title = "Seasonal Trends in Rat Sightings",
        x = "Month",
        y = "Frequency")
 ```

@@ -280,7 +280,7 @@ $(document).ready(function () {
 <h2>NYC Rodent Inspection Data Summary</h2>
 <pre class="r"><code>rodent_inspec_df &lt;- read_csv(&quot;data/Rodent Inspection Data - 2023.csv&quot;)</code></pre>
 <pre><code>## Rows: 17578 Columns: 25
-## ── Column specification ──────────────────────────
+## ── Column specification ───────────────────────────────────────
 ## Delimiter: &quot;,&quot;
 ## chr (12): INSPECTION_TYPE, JOB_ID, BLOCK, LOT, HOUSE_NUMBER, STREET_NAME, BO...
 ## dbl (13): JOB_TICKET_OR_WORK_ORDER_ID, JOB_PROGRESS, BBL, BORO_CODE, ZIP_COD...
@@ -504,12 +504,12 @@ skimr::skim_without_charts(rodent_inspec_df)</code></pre>
 </tbody>
 </table>
 </div>
-<div id="department-of-sanitation-monthly-tonnage-data-analysis"
+<div id="department-of-sanitation-monthly-tonnage-data-summary"
 class="section level2">
-<h2>Department of Sanitation Monthly Tonnage Data Analysis</h2>
+<h2>Department of Sanitation Monthly Tonnage Data Summary</h2>
 <pre class="r"><code>dsny_df &lt;- read_csv(&quot;data/DSNY_Monthly_Tonnage_Data_20231108.csv&quot;)</code></pre>
 <pre><code>## Rows: 23237 Columns: 11
-## ── Column specification ──────────────────────────
+## ── Column specification ───────────────────────────────────────
 ## Delimiter: &quot;,&quot;
 ## chr (3): MONTH, BOROUGH, COMMUNITYDISTRICT
 ## dbl (8): REFUSETONSCOLLECTED, PAPERTONSCOLLECTED, MGPTONSCOLLECTED, RESORGAN...
