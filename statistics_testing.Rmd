@@ -1,0 +1,98 @@
+---
+title: "ANOVA Test"
+output:
+  html_document:
+    theme: cerulean
+    toc : true
+    toc_float: true
+    code_folding: hide
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(readr)
+library(dplyr)
+library(shiny)
+
+knitr::opts_chunk$set(
+ echo = TRUE,
+ warning = FALSE,
+ message = FALSE, 
+ fig.width = 8, 
+  fig.height = 6,
+  out.width = "90%"
+)
+theme_set(theme_minimal() + theme(legend.position = "bottom"))
+options(
+  ggplot2.continuous.colour = "viridis",
+  ggplot2.continuous.fill = "viridis"
+)
+
+theme_set(theme_minimal() + theme(legend.position = "bottom"))
+```
+
+```{r datasets setup, include=FALSE}
+dsny_df <- read_csv("data/DSNY_Monthly_Tonnage_Data_20231108.csv") 
+
+dsny_df = 
+  dsny_df |> 
+  janitor::clean_names() |> 
+  separate(month, c("year", "month"), sep = " / ") |> 
+  filter(year == "2023") |> 
+  select(-communitydistrict, -resorganicstons, -schoolorganictons, -leavesorganictons, -xmastreetons)
+
+
+rodent_inspec_df <- read_csv("data/Rodent Inspection Data - 2023.csv")
+
+rodent_inspec_df = 
+  rodent_inspec_df |> 
+  janitor::clean_names() |> 
+  select(-job_id, -job_ticket_or_work_order_id, -job_progress, -bbl, -house_number, -street_name, -block, -lot, -approved_date, -location, -community_board, -council_district, -census_tract, -bin, -nta)
+
+rodent_tidy = 
+  rodent_inspec_df |>
+  mutate(inspection_date = parse_date_time(inspection_date, orders = "mdy HM"),
+         day = day(inspection_date), 
+         month = sprintf("%02d", month(inspection_date)), 
+         year = year(inspection_date),  
+         hour = hour(inspection_date),  
+         minute = minute(inspection_date)) |> 
+  select(-day, -hour, -minute, -boro_code)
+  
+
+total_rat_df = merge(dsny_df, rodent_inspec_df)
+
+rat_merge_df = merge(dsny_df, rodent_tidy)
+```
+
+## Latitudinal Model
+
+$H_0:$ Every parameter of `latitude`, `refusetonscollected`, `papertonscollected`, and `mgptonscollected` is equal to zero.
+
+$H_1:$ Not every parameter of `latitude`, `refusetonscollected`, `papertonscollected`, and `mgptonscollected` is equal to zero. 
+
+```{r}
+lat_model = lm(latitude ~ refusetonscollected + papertonscollected + mgptonscollected, data = rat_merge_df)
+
+anova(lat_model) %>% 
+    knitr::kable()
+```
+
+We use a one way ANOVA to determine if the means between variables refuse collected (tons), recyclable paper collected (tons), and recyclable metal, glass, plastic, and beverage cartons (tons) are different. Based on the results, the p-values of all three variables (`refusetonscollected`, `papertonscollected`, and `mgptonscollected`) are smaller than 0.05 so we reject the null hypothesis and conclude that the means are different.
+
+
+## Longitudinal Model
+
+$H_0:$ Every parameter of `longitude`, `refusetonscollected`, `papertonscollected`, and `mgptonscollected` is equal to zero.
+
+$H_1:$ Not every parameter of `longitude`, `refusetonscollected`, `papertonscollected`, and `mgptonscollected` is equal to zero.
+
+```{r}
+long_model = lm(longitude ~ refusetonscollected + papertonscollected + mgptonscollected, data = rat_merge_df)
+
+anova(long_model) %>% 
+  knitr::kable()
+```
+
+We use a one way ANOVA to determine if the means between variables refuse collected (tons), recyclable paper collected (tons), and recyclable metal, glass, plastic, and beverage cartons (tons) are different. Based on the results, the p-values of all three variables (`refusetonscollected`, `papertonscollected`, and `mgptonscollected`) are smaller than 0.05 so we reject the null hypothesis and conclude that the means are different.
