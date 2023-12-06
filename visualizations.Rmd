@@ -80,6 +80,7 @@ ggplot(rat_activity_counts, aes(x = borough, y = count)) +
   scale_y_continuous(labels = scales::comma_format(scale = 1e+0))
 ```
 
+This graph illustrates the frequency of rat activity in each borough of New York City. Brooklyn has the most rat activity, with over 300,000 confirmed rat activity sightings. Staten Island has the least amount of rat activity, with only 990 confirmed rat activity sightings. Overall, this graph gives us an idea of how severe the rat problem is in each borough of the city. 
 
 ## Table 2
 
@@ -97,8 +98,10 @@ ggplot(rat_activity_counts, aes(x = month, y = count)) +
   labs(title = "Frequency of Rat Activity by Month",
        x = "Month",
        y = "Frequency") + 
-  scale_y_continuous(labels = scales::comma_format(scale = 1e+0))
+  scale_y_continuous(labels = scales::comma_format(scale = 1e+0)) 
 ```
+
+This graph illustrates the frequency of rat activity across New York City by month in 2023, up to October. The rat frequency stays relatively consistent between January and June, but rises significantly from July to October. This could be because the environment in New York from July to October is the most favorable for rat survival. 
 
 ## Table 3
 
@@ -109,6 +112,8 @@ ggplot(rat_activity_counts, aes(x = month, y = count)) +
        x = "Month",
        y = "Frequency")
 ```
+
+This graph illustrates the seasonal trends in rat sightings in New York City. Supported by the graph above, rat sightings are significantly lower in January to June compared to July to October. This suggests that rats are more active in the warmer months compared to the colder months. 
 
 ## Table 4
 
@@ -121,10 +126,13 @@ rat_activity_counts =
 
 ggplot(rat_activity_counts, aes(x = month, y = refusetonscollected, color = count)) +
   geom_boxplot(color="red",fill="orange") +
-  labs(title = "Correlation between Trash Tonnage and Rat Sightings by Month",
+  labs(title = "Relationship Between Trash Tonnage and Rat Sightings by Month",
        x = "Trash Collected (by Tonnage)",
        y = "Rat Sightings") 
 ```
+
+This graph illustrates a proposed relationship between trash tonnage and rat sightings. Our group hypothesized that where there is more trash collected, there will be a higher rat presence. 
+
 
 ## Transit App Graph 
 
@@ -138,3 +146,4 @@ ggplot(app_data, aes(x = station_id, y = one_or_two, color = borough)) +
   theme(axis.text.x = element_text(angle = 60, hjust = 1))
 ```
 
+This graph illustrates how many rat sightings were recorded in various subway stations in each borough. In this case, Manhattan has the most rat sightings compared to the other boroughs and Staten Island still has the least. 
