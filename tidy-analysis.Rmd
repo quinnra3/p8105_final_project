@@ -62,5 +62,3 @@ total_rat_df2 = left_join(dsny_df, rodent_inspec_df, by = "borough")
 
 ```
 
-=======
->>>>>>> 6134233579c6b5bf3a7516915aade99dfff26d21

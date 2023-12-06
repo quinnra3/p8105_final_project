@@ -276,40 +276,11 @@ $(document).ready(function () {
 </div>
 
 
-<p>Questions: wynter quinn laylah</p>
-<ol style="list-style-type: decimal">
-<li>What is the overall frequency of rat sightings?
-<ol style="list-style-type: lower-alpha">
-<li>Bar Chart or Histogram of rat frequency for each month</li>
-</ol></li>
-<li>What is the distribution of rat sightings across different boroughs
-in NYC?
-<ol style="list-style-type: lower-alpha">
-<li>Bar Chart comparing total number of rat sightings in each borough
-using facet wrap</li>
-</ol></li>
-<li>Are there any seasonal trends or patterns in rat sightings?
-<ol style="list-style-type: lower-alpha">
-<li>Line Graph to display the seasonal variation in rat sightings</li>
-</ol></li>
-<li>Is there any correlation between monthly collection of garbage
-tonnages that the NYC Department of Sanitation collects and the
-prevalence of rat sightings?
-<ol style="list-style-type: lower-alpha">
-<li>Scatter Plot of monthly garbage tonnage against number of rat
-sightings</li>
-<li>Include line of best fit</li>
-</ol></li>
-<li>Which borough has the most monthly reported rat sightings?
-<ol style="list-style-type: lower-alpha">
-<li>Bar Chart</li>
-</ol></li>
-</ol>
 <div id="loading-data-sets" class="section level1">
 <h1>Loading Data Sets</h1>
 <pre class="r"><code>dsny_df &lt;- read_csv(&quot;data/DSNY_Monthly_Tonnage_Data_20231108.csv&quot;) </code></pre>
 <pre><code>## Rows: 23237 Columns: 11
-## ── Column specification ────────────────────────────────────────────────────────
+## ── Column specification ───────────────────────────────────────
 ## Delimiter: &quot;,&quot;
 ## chr (3): MONTH, BOROUGH, COMMUNITYDISTRICT
 ## dbl (8): REFUSETONSCOLLECTED, PAPERTONSCOLLECTED, MGPTONSCOLLECTED, RESORGAN...
@@ -326,7 +297,7 @@ sightings</li>
 
 rodent_inspec_df &lt;- read_csv(&quot;data/Rodent Inspection Data - 2023.csv&quot;)</code></pre>
 <pre><code>## Rows: 17578 Columns: 25
-## ── Column specification ────────────────────────────────────────────────────────
+## ── Column specification ───────────────────────────────────────
 ## Delimiter: &quot;,&quot;
 ## chr (12): INSPECTION_TYPE, JOB_ID, BLOCK, LOT, HOUSE_NUMBER, STREET_NAME, BO...
 ## dbl (13): JOB_TICKET_OR_WORK_ORDER_ID, JOB_PROGRESS, BBL, BORO_CODE, ZIP_COD...
@@ -399,7 +370,7 @@ ggplot(rat_activity_counts, aes(x = month, y = count)) +
 <h2>Table 3</h2>
 <pre class="r"><code>ggplot(rat_activity_counts, aes(x = month, y = count)) + 
   geom_point() +
-  labs(title = &quot;Frequency of Rat Activity by Month&quot;,
+  labs(title = &quot;Seasonal Trends in Rat Sightings&quot;,
        x = &quot;Month&quot;,
        y = &quot;Frequency&quot;)</code></pre>
 <p><img src="visualizations_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
@@ -411,8 +382,8 @@ ggplot(rat_activity_counts, aes(x = month, y = count)) +
   filter(result == &quot;Rat Activity&quot;) |&gt; 
   group_by(month, refusetonscollected) |&gt; 
   summarise(count = n()) </code></pre>
-<pre><code>## `summarise()` has grouped output by &#39;month&#39;. You can override using the
-## `.groups` argument.</code></pre>
+<pre><code>## `summarise()` has grouped output by &#39;month&#39;. You can override
+## using the `.groups` argument.</code></pre>
 <pre class="r"><code>ggplot(rat_activity_counts, aes(x = month, y = refusetonscollected, color = count)) +
   geom_boxplot(color=&quot;red&quot;,fill=&quot;orange&quot;) +
   labs(title = &quot;Correlation between Trash Tonnage and Rat Sightings by Month&quot;,
@@ -424,7 +395,7 @@ ggplot(rat_activity_counts, aes(x = month, y = count)) +
 <h2>Transit App Graph</h2>
 <pre class="r"><code>app_data &lt;- read_csv(&quot;data/Transit app rat reports - 2023-10-08 to 2023-11-07.csv&quot;)</code></pre>
 <pre><code>## Rows: 387 Columns: 7
-## ── Column specification ────────────────────────────────────────────────────────
+## ── Column specification ───────────────────────────────────────
 ## Delimiter: &quot;,&quot;
 ## chr (3): station_name, borough, lines_served
 ## dbl (4): station_id, so_many, one_or_two, none
