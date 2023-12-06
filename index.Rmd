@@ -1,7 +1,9 @@
 ---
-title: ""
+title: "An Investigation into NYC's Rats"
 output:
   html_document:
+    includes:
+      in_header: header.html
     toc : true
     toc_float: true
     code_folding: hide
@@ -9,9 +11,7 @@ output:
 
 “The rats are absolutely going to hate this announcement. But the rats don’t run this city, we do.”
 
-- Jessica Tisch, New York City’s sanitation commissioner**
-
-## Screencast
+- Jessica Tisch, New York City’s sanitation commissioner
 
 ## Rat Sightings and Trash Collection
 
@@ -96,6 +96,8 @@ rat_map =
 
 rat_map
 ```
+
+<img src="pictures/rat_nyc.jpg" style="width:75%">
 
 
 

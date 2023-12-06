@@ -10,7 +10,6 @@
 
 
 
-<meta name="date" content="2023-12-01" />
 
 <title>Report</title>
 
@@ -33,6 +32,8 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-6.4.2/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet" />
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -258,12 +259,23 @@ $(document).ready(function () {
 <li>
   <a href="visualizations.html">Visualizations</a>
 </li>
-<li class="dropdown-header">Inferential Statistics</li>
 <li>
-  <a href="statistics_testing.html"></a>
+  <a href="statistics_testing.html">ANOVA Tests</a>
 </li>
 <li>
   <a href="report.html">Report</a>
+</li>
+<li>
+  <a>
+    <span class="fa fa-play-circle fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://github.com/quinnra3/p8105_final_project">
+    <span class="fa fa-github fa-lg"></span>
+     
+  </a>
 </li>
       </ul>
     </div><!--/.nav-collapse -->
@@ -275,7 +287,6 @@ $(document).ready(function () {
 
 
 <h1 class="title toc-ignore">Report</h1>
-<h4 class="date">2023-12-01</h4>
 
 </div>
 
@@ -325,11 +336,23 @@ sightings?</p>
 </div>
 <div id="statistical-testing-anova" class="section level2">
 <h2>Statistical Testing: ANOVA</h2>
+<p>We conducted two ANOVA tests to determine if the means between
+variables longitude, latitude, refuse collected (tons), recyclable paper
+collected (tons), and recyclable metal, glass, plastic, and beverage
+cartons (tons) are different. Two separate ANOVA tests were conducted to
+evaluate longitude against the trash variables, and latitude against the
+trash variables. Based on the results, the p-values of all three
+variables (<code>refusetonscollected</code>,
+<code>papertonscollected</code>, and <code>mgptonscollected</code>) are
+smaller than 0.05 so we reject the null hypothesis and conclude that the
+means are different for both the longitude and latitude ANOVA tests.</p>
 </div>
 <div id="discussion-and-conclusion" class="section level2">
 <h2>Discussion and Conclusion</h2>
-<p>Things that surprised us: Brooklyn having the highest rat frequency,
-seasonal trends in rat sightings.</p>
+<p>Overall, the visualizations and the ANOVA test yielded the expected
+results. The rat problem in New York City is significant….. Things that
+surprised us: Brooklyn having the highest rat frequency, seasonal trends
+in rat sightings.</p>
 </div>
 
 
