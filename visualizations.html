@@ -347,6 +347,12 @@ ggplot(rat_activity_counts, aes(x = borough, y = count)) +
        y = &quot;Frequency&quot;) + 
   scale_y_continuous(labels = scales::comma_format(scale = 1e+0))</code></pre>
 <p><img src="visualizations_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>This graph illustrates the frequency of rat activity in each borough
+of New York City. Brooklyn has the most rat activity, with over 300,000
+confirmed rat activity sightings. Staten Island has the least amount of
+rat activity, with only 990 confirmed rat activity sightings. Overall,
+this graph gives us an idea of how severe the rat problem is in each
+borough of the city.</p>
 </div>
 <div id="table-2" class="section level2">
 <h2>Table 2</h2>
@@ -363,8 +369,13 @@ ggplot(rat_activity_counts, aes(x = month, y = count)) +
   labs(title = &quot;Frequency of Rat Activity by Month&quot;,
        x = &quot;Month&quot;,
        y = &quot;Frequency&quot;) + 
-  scale_y_continuous(labels = scales::comma_format(scale = 1e+0))</code></pre>
+  scale_y_continuous(labels = scales::comma_format(scale = 1e+0)) </code></pre>
 <p><img src="visualizations_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>This graph illustrates the frequency of rat activity across New York
+City by month in 2023, up to October. The rat frequency stays relatively
+consistent between January and June, but rises significantly from July
+to October. This could be because the environment in New York from July
+to October is the most favorable for rat survival.</p>
 </div>
 <div id="table-3" class="section level2">
 <h2>Table 3</h2>
@@ -374,6 +385,11 @@ ggplot(rat_activity_counts, aes(x = month, y = count)) +
        x = &quot;Month&quot;,
        y = &quot;Frequency&quot;)</code></pre>
 <p><img src="visualizations_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>This graph illustrates the seasonal trends in rat sightings in New
+York City. Supported by the graph above, rat sightings are significantly
+lower in January to June compared to July to October. This suggests that
+rats are more active in the warmer months compared to the colder
+months.</p>
 </div>
 <div id="table-4" class="section level2">
 <h2>Table 4</h2>
@@ -386,10 +402,13 @@ ggplot(rat_activity_counts, aes(x = month, y = count)) +
 ## using the `.groups` argument.</code></pre>
 <pre class="r"><code>ggplot(rat_activity_counts, aes(x = month, y = refusetonscollected, color = count)) +
   geom_boxplot(color=&quot;red&quot;,fill=&quot;orange&quot;) +
-  labs(title = &quot;Correlation between Trash Tonnage and Rat Sightings by Month&quot;,
+  labs(title = &quot;Relationship Between Trash Tonnage and Rat Sightings by Month&quot;,
        x = &quot;Trash Collected (by Tonnage)&quot;,
        y = &quot;Rat Sightings&quot;) </code></pre>
 <p><img src="visualizations_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>This graph illustrates a proposed relationship between trash tonnage
+and rat sightings. Our group hypothesized that where there is more trash
+collected, there will be a higher rat presence.</p>
 </div>
 <div id="transit-app-graph" class="section level2">
 <h2>Transit App Graph</h2>
@@ -409,6 +428,10 @@ ggplot(rat_activity_counts, aes(x = month, y = count)) +
   theme(axis.text.x = element_text(angle = 60, hjust = 1))</code></pre>
 <pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula = &#39;y ~ x&#39;</code></pre>
 <p><img src="visualizations_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>This graph illustrates how many rat sightings were recorded in
+various subway stations in each borough. In this case, Manhattan has the
+most rat sightings compared to the other boroughs and Staten Island
+still has the least.</p>
 </div>
 </div>
 
