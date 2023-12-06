@@ -127,14 +127,14 @@ rat_activity_counts =
 ggplot(rat_activity_counts, aes(x = month, y = refusetonscollected, color = count)) +
   geom_boxplot(color="red",fill="orange") +
   labs(title = "Relationship Between Trash Tonnage and Rat Sightings by Month",
-       x = "Trash Collected (by Tonnage)",
-       y = "Rat Sightings") 
+       x = "Month",
+       y = "Trash Collected (Tonnnage)") 
 ```
 
 This graph illustrates a proposed relationship between trash tonnage and rat sightings. Our group hypothesized that where there is more trash collected, there will be a higher rat presence. 
 
 
-## Transit App Graph 
+## Transit App Graphs 
 
 ```{r}
 app_data <- read_csv("data/Transit app rat reports - 2023-10-08 to 2023-11-07.csv")
@@ -146,4 +146,12 @@ ggplot(app_data, aes(x = station_id, y = one_or_two, color = borough)) +
   theme(axis.text.x = element_text(angle = 60, hjust = 1))
 ```
 
-This graph illustrates how many rat sightings were recorded in various subway stations in each borough. In this case, Manhattan has the most rat sightings compared to the other boroughs and Staten Island still has the least. 
+```{r}
+ggplot(app_data, aes(x = station_id, y = so_many, color = borough)) + 
+  geom_point() + 
+  geom_smooth(se = FALSE) + 
+  facet_grid(. ~ borough) + 
+  theme(axis.text.x = element_text(angle = 60, hjust = 1))
+```
+
+These graphs illustrate how many rat sightings were recorded in various subway stations in each borough. In this case, Manhattan has the most rat sightings compared to the other boroughs and Staten Island still has the least. 
