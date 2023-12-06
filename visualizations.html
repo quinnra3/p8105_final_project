@@ -17,7 +17,7 @@
 <script src="site_libs/header-attrs-2.24/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/cerulean.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/yeti.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
@@ -280,7 +280,7 @@ $(document).ready(function () {
 <h1>Loading Data Sets</h1>
 <pre class="r"><code>dsny_df &lt;- read_csv(&quot;data/DSNY_Monthly_Tonnage_Data_20231108.csv&quot;) </code></pre>
 <pre><code>## Rows: 23237 Columns: 11
-## ── Column specification ───────────────────────────────────────
+## ── Column specification ────────────────────────────────────────────────────────
 ## Delimiter: &quot;,&quot;
 ## chr (3): MONTH, BOROUGH, COMMUNITYDISTRICT
 ## dbl (8): REFUSETONSCOLLECTED, PAPERTONSCOLLECTED, MGPTONSCOLLECTED, RESORGAN...
@@ -297,7 +297,7 @@ $(document).ready(function () {
 
 rodent_inspec_df &lt;- read_csv(&quot;data/Rodent Inspection Data - 2023.csv&quot;)</code></pre>
 <pre><code>## Rows: 17578 Columns: 25
-## ── Column specification ───────────────────────────────────────
+## ── Column specification ────────────────────────────────────────────────────────
 ## Delimiter: &quot;,&quot;
 ## chr (12): INSPECTION_TYPE, JOB_ID, BLOCK, LOT, HOUSE_NUMBER, STREET_NAME, BO...
 ## dbl (13): JOB_TICKET_OR_WORK_ORDER_ID, JOB_PROGRESS, BBL, BORO_CODE, ZIP_COD...
@@ -398,8 +398,8 @@ months.</p>
   filter(result == &quot;Rat Activity&quot;) |&gt; 
   group_by(month, refusetonscollected) |&gt; 
   summarise(count = n()) </code></pre>
-<pre><code>## `summarise()` has grouped output by &#39;month&#39;. You can override
-## using the `.groups` argument.</code></pre>
+<pre><code>## `summarise()` has grouped output by &#39;month&#39;. You can override using the
+## `.groups` argument.</code></pre>
 <pre class="r"><code>ggplot(rat_activity_counts, aes(x = month, y = refusetonscollected, color = count)) +
   geom_boxplot(color=&quot;red&quot;,fill=&quot;orange&quot;) +
   labs(title = &quot;Relationship Between Trash Tonnage and Rat Sightings by Month&quot;,
@@ -414,7 +414,7 @@ collected, there will be a higher rat presence.</p>
 <h2>Transit App Graphs</h2>
 <pre class="r"><code>app_data &lt;- read_csv(&quot;data/Transit app rat reports - 2023-10-08 to 2023-11-07.csv&quot;)</code></pre>
 <pre><code>## Rows: 387 Columns: 7
-## ── Column specification ───────────────────────────────────────
+## ── Column specification ────────────────────────────────────────────────────────
 ## Delimiter: &quot;,&quot;
 ## chr (3): station_name, borough, lines_served
 ## dbl (4): station_id, so_many, one_or_two, none

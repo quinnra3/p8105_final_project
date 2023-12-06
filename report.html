@@ -17,7 +17,7 @@
 <script src="site_libs/header-attrs-2.24/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/cerulean.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/yeti.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
@@ -298,24 +298,34 @@ New York’s rat problem.</p>
 </div>
 <div id="data" class="section level2">
 <h2>Data</h2>
-<p>We obtained our three datasets (Rodent Inspection Data and DSNY
+<p>We obtained two of our datasets (Rodent Inspection Data and DSNY
 Monthly Tonnage Data 2023) from NYC Health’s open data website. We
 cleaned the data by removing values and columns that were not necessary
 for our research question and data analysis. The main function we used
 for this was select() and mutate(), where we were easily able to remove
-and change columns. We originally had an additional dataset that showed
-rat sightings, but due to the size of the datasets, we could not combine
-all three and opted to combine the Rodent Inspection Data and the DSNY
-Monthly Tonnage Data 2023 datasets.</p>
+and change columns. We obtained our third dataset (Transit App Rat
+Reports) from the NYC Subway Rat Detector; we were not able to combine
+this dataset with the other two due to size. This dataset was already
+tidy, and we opted not to make any further changes to this dataset.</p>
 </div>
 <div id="exploratory-analysis" class="section level2">
 <h2>Exploratory Analysis</h2>
+<p>For our visualizations, we decided to make graphs that addressed five
+questions: - What is the overall frequency of rat sightings? - What is
+the distribution of rat sightings across different boroughs in NYC? -
+Are there any seasonal trends or patterns in rat sightings? - Is there
+any correlation between monthly collection of garbage tonnages that the
+NYC Department of Sanitation collects and the prevalence of rat
+sightings? - Which borough has the most monthly reported rat
+sightings?</p>
 </div>
 <div id="statistical-testing-anova" class="section level2">
 <h2>Statistical Testing: ANOVA</h2>
 </div>
 <div id="discussion-and-conclusion" class="section level2">
 <h2>Discussion and Conclusion</h2>
+<p>Things that surprised us: Brooklyn having the highest rat frequency,
+seasonal trends in rat sightings.</p>
 </div>
 
 

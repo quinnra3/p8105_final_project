@@ -43,34 +43,34 @@ proposed.
 
 November 6 - 12
 
-- Data import, cleaning, tidying
-- Begin initial data manipulation
-- Submit proposal and Github repo (deliverable)
+-   Data import, cleaning, tidying
+-   Begin initial data manipulation
+-   Submit proposal and Github repo (deliverable)
 
 November 12 - 19
 
-- Complete data tidying
-- Begin data manipulation
-- Begin data exploration
-- Project review meeting (assigned)
+-   Complete data tidying
+-   Begin data manipulation
+-   Begin data exploration
+-   Project review meeting (assigned)
 
 November 20 - 26
 
-- Data exploration
-- Begin website (deliverable)
-- Begin report (deliverable)
+-   Data exploration
+-   Begin website (deliverable)
+-   Begin report (deliverable)
 
 November 27 - December 4
 
-- Complete website, screencast, and report (deliverables)
+-   Complete website, screencast, and report (deliverables)
 
 December 4 - December 9
 
-- Submit:
-  - Report
-  - Webpage and screencast
-  - Peer assessment
+-   Submit:
+    -   Report
+    -   Webpage and screencast
+    -   Peer assessment
 
 December 13
 
-- In class presentation
+-   In class presentation
