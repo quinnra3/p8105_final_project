@@ -1,8 +1,7 @@
 ---
-title: "index"
+title: ""
 output:
   html_document:
-    theme: yeti
     toc : true
     toc_float: true
     code_folding: hide
