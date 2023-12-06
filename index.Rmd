@@ -13,6 +13,8 @@ output:
 
 - Jessica Tisch, New York City’s sanitation commissioner
 
+<img src="pictures/rat_nyc.jpg" style="width:60%">
+
 ## Rat Sightings and Trash Collection
 
 ```{r setup, include=FALSE}
@@ -96,9 +98,6 @@ rat_map =
 
 rat_map
 ```
-
-<img src="pictures/rat_nyc.jpg" style="width:75%">
-
 
 
 
