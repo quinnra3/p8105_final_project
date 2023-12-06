@@ -1,25 +1,34 @@
 ---
-title: "about"
+title: "Meet Our Team!"
 output: html_document
-date: '2023-12-01'
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+
+library(magick)
+library(cropcircles)
 ```
 
-## add pics of us
+
+# <img src="pictures/wynter.jpeg" alt="Avatar" width="200" height="300" style="border:2px solid pink"> Wynter Henry
 
 **About Wynter:**
 
 Wynter is a first year MS in Epidemiology candidate here at Mailman. She has a BS in Biology and a minor in Public Health Analytics from Thomas Jefferson University in Philadelphia, PA. Wynter is interested in infectious disease epidemiology and wants to help prevent the next pandemic. She hopes to continue her studies in epidemiology and public health by pursing a PhD. 
 
+-----------------------------------------------------
+
+# <img src="pictures/laylah.jpeg" alt="Avatar" width="200" height="300" style="border:2px solid orange"> Laylah Jones
 
 **About Laylah:**
 
-Laylah is a first year MS student in Epidemiology at the Mailman School of Public Health. She received her BS in Psychology from Drexel University in Philadelphia, PA and worked as a Project Coordinator at a Neuropsychology research lab focusing on individuals with neurodevelopmental disorders and brain development. Laylah is interested in pursuing Psychiatric Epidemiology in hopes of addressing mental health disparities in underrepresented populations and minority communities. 
+Laylah is a first year MS student in Epidemiology at the Mailman School of Public Health. She received her BS in Psychology from Drexel University in Philadelphia, PA and worked as a Project Coordinator at a Neuropsychology research lab focusing on individuals with neurodevelopmental disorders and brain development. Laylah is interested in pursuing Psychiatric Epidemiology in hopes of addressing mental health disparities in underrepresented populations and minority communities.
 
+-----------------------------------------------------
 
-**About Quinn:** 
+# <img src="pictures/quinn.jpeg" alt="Avatar" width="200" height="300" style="border:2px solid green"> Quinn Anderson
+
+**About Quinn:**
 
 hello!!!! 

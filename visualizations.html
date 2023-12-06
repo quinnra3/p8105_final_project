@@ -280,7 +280,7 @@ $(document).ready(function () {
 <h1>Loading Data Sets</h1>
 <pre class="r"><code>dsny_df &lt;- read_csv(&quot;data/DSNY_Monthly_Tonnage_Data_20231108.csv&quot;) </code></pre>
 <pre><code>## Rows: 23237 Columns: 11
-## ── Column specification ────────────────────────────────────────────────────────
+## ── Column specification ───────────────────────────────────────
 ## Delimiter: &quot;,&quot;
 ## chr (3): MONTH, BOROUGH, COMMUNITYDISTRICT
 ## dbl (8): REFUSETONSCOLLECTED, PAPERTONSCOLLECTED, MGPTONSCOLLECTED, RESORGAN...
@@ -297,7 +297,7 @@ $(document).ready(function () {
 
 rodent_inspec_df &lt;- read_csv(&quot;data/Rodent Inspection Data - 2023.csv&quot;)</code></pre>
 <pre><code>## Rows: 17578 Columns: 25
-## ── Column specification ────────────────────────────────────────────────────────
+## ── Column specification ───────────────────────────────────────
 ## Delimiter: &quot;,&quot;
 ## chr (12): INSPECTION_TYPE, JOB_ID, BLOCK, LOT, HOUSE_NUMBER, STREET_NAME, BO...
 ## dbl (13): JOB_TICKET_OR_WORK_ORDER_ID, JOB_PROGRESS, BBL, BORO_CODE, ZIP_COD...
@@ -398,23 +398,23 @@ months.</p>
   filter(result == &quot;Rat Activity&quot;) |&gt; 
   group_by(month, refusetonscollected) |&gt; 
   summarise(count = n()) </code></pre>
-<pre><code>## `summarise()` has grouped output by &#39;month&#39;. You can override using the
-## `.groups` argument.</code></pre>
+<pre><code>## `summarise()` has grouped output by &#39;month&#39;. You can override
+## using the `.groups` argument.</code></pre>
 <pre class="r"><code>ggplot(rat_activity_counts, aes(x = month, y = refusetonscollected, color = count)) +
   geom_boxplot(color=&quot;red&quot;,fill=&quot;orange&quot;) +
   labs(title = &quot;Relationship Between Trash Tonnage and Rat Sightings by Month&quot;,
-       x = &quot;Trash Collected (by Tonnage)&quot;,
-       y = &quot;Rat Sightings&quot;) </code></pre>
+       x = &quot;Month&quot;,
+       y = &quot;Trash Collected (Tonnnage)&quot;) </code></pre>
 <p><img src="visualizations_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <p>This graph illustrates a proposed relationship between trash tonnage
 and rat sightings. Our group hypothesized that where there is more trash
 collected, there will be a higher rat presence.</p>
 </div>
-<div id="transit-app-graph" class="section level2">
-<h2>Transit App Graph</h2>
+<div id="transit-app-graphs" class="section level2">
+<h2>Transit App Graphs</h2>
 <pre class="r"><code>app_data &lt;- read_csv(&quot;data/Transit app rat reports - 2023-10-08 to 2023-11-07.csv&quot;)</code></pre>
 <pre><code>## Rows: 387 Columns: 7
-## ── Column specification ────────────────────────────────────────────────────────
+## ── Column specification ───────────────────────────────────────
 ## Delimiter: &quot;,&quot;
 ## chr (3): station_name, borough, lines_served
 ## dbl (4): station_id, so_many, one_or_two, none
@@ -428,7 +428,14 @@ collected, there will be a higher rat presence.</p>
   theme(axis.text.x = element_text(angle = 60, hjust = 1))</code></pre>
 <pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula = &#39;y ~ x&#39;</code></pre>
 <p><img src="visualizations_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
-<p>This graph illustrates how many rat sightings were recorded in
+<pre class="r"><code>ggplot(app_data, aes(x = station_id, y = so_many, color = borough)) + 
+  geom_point() + 
+  geom_smooth(se = FALSE) + 
+  facet_grid(. ~ borough) + 
+  theme(axis.text.x = element_text(angle = 60, hjust = 1))</code></pre>
+<pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula = &#39;y ~ x&#39;</code></pre>
+<p><img src="visualizations_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>These graphs illustrate how many rat sightings were recorded in
 various subway stations in each borough. In this case, Manhattan has the
 most rat sightings compared to the other boroughs and Staten Island
 still has the least.</p>
