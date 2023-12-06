@@ -31,7 +31,7 @@ For our visualizations, we decided to make graphs that addressed five questions:
 ## Statistical Testing: ANOVA 
 
 ## Discussion and Conclusion 
-Things that surprised us: Brooklyn having the highest rat frequency, seasonal trends in rat sightings. 
+Overall, the visualizations and the ANOVA test yielded the expected results. The rat problem in New York City is significant..... Things that surprised us: Brooklyn having the highest rat frequency, seasonal trends in rat sightings. 
 
 
 
