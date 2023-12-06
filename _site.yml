@@ -2,6 +2,7 @@ name: "Rat Website!"
 output_dir: "."
 navbar:
   title: "Home"
+  
   right:
     - text: "About"
       href: about.html
@@ -15,12 +16,12 @@ navbar:
     - text: "Visualizations"
       href: visualizations.html
       
-    - text: "Inferential Statistics"
-    - href: statistics_testing.html
+    - text: "ANOVA Tests"
+      href: statistics_testing.html
 
     - text: "Report"
       href: report.html
     
 output:
   html_document:
-    theme: cerulean
+    theme: yeti

@@ -15,13 +15,23 @@ As all New Yorkers know, there is a serious rat problem in the city. We see them
 The New York City rat problem is constantly covered in news outlets, and we wanted to further explore this issue to see if the problem is really as severe as it is presented to be. Specific articles that inspired us were "New York’s Rats Have Already Won" by Xochitl Gonzalez published in the *The Atlantic* and "There Are Now 3 Million Rats in NYC, a 50% Increase Since 2010" published by MMPC. After looking at NYC Health's open data, we found a dataset detailing the numbers behind New York's rat problem.
 
 ## Data
-We obtained our three datasets (Rodent Inspection Data and DSNY Monthly Tonnage Data 2023) from NYC Health's open data website. We cleaned the data by removing values and columns that were not necessary for our research question and data analysis. The main function we used for this was select() and mutate(), where we were easily able to remove and change columns. We originally had an additional dataset that showed rat sightings, but due to the size of the datasets, we could not combine all three and opted to combine the Rodent Inspection Data and the DSNY Monthly Tonnage Data 2023 datasets. 
+We obtained two of our datasets (Rodent Inspection Data and DSNY Monthly Tonnage Data 2023) from NYC Health's open data website. We cleaned the data by removing values and columns that were not necessary for our research question and data analysis. The main function we used for this was select() and mutate(), where we were easily able to remove and change columns. We obtained our third dataset (Transit App Rat Reports) from the NYC Subway Rat Detector; we were not able to combine this dataset with the other two due to size. This dataset was already tidy, and we opted not to make any further changes to this dataset. 
+
 
 ## Exploratory Analysis
+For our visualizations, we decided to make graphs that addressed five questions:
+- What is the overall frequency of rat sightings?
+- What is the distribution of rat sightings across different boroughs in NYC?
+- Are there any seasonal trends or patterns in rat sightings?
+- Is there any correlation between monthly collection of garbage tonnages that the NYC Department of Sanitation collects and the prevalence of rat sightings?
+- Which borough has the most monthly reported rat sightings?
+
+
 
 ## Statistical Testing: ANOVA 
 
 ## Discussion and Conclusion 
+Things that surprised us: Brooklyn having the highest rat frequency, seasonal trends in rat sightings. 
 
 
 
