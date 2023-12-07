@@ -170,7 +170,7 @@ rat_app_one_plot =
   geom_point() + 
   geom_smooth(se = FALSE) + 
   facet_grid(. ~ borough) + 
-  theme(axis.text.x = element_text(angle = 60, hjust = 1))
+  theme(axis.text.x = element_text(angle = 65, hjust = 4))
 
 ggplotly(rat_app_one_plot)
 ```
@@ -181,7 +181,7 @@ rat_app_many_plot =
   geom_point() + 
   geom_smooth(se = FALSE) + 
   facet_grid(. ~ borough) + 
-  theme(axis.text.x = element_text(angle = 60, hjust = 1))
+  theme(axis.text.x = element_text(angle = 65, hjust = 4))
 
 ggplotly(rat_app_many_plot)
 ```
