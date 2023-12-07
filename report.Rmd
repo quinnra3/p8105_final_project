@@ -1,7 +1,6 @@
 ---
 title: "Report"
 output: html_document
-date: '2023-12-01'
 ---
 
 ```{r setup, include=FALSE}
@@ -30,8 +29,10 @@ For our visualizations, we decided to make graphs that addressed five questions:
 
 ## Statistical Testing: ANOVA 
 
+We conducted two ANOVA tests to determine if the means between variables longitude, latitude, refuse collected (tons), recyclable paper collected (tons), and recyclable metal, glass, plastic, and beverage cartons (tons) are different. Two separate ANOVA tests were conducted to evaluate longitude against the trash variables, and latitude against the trash variables. Based on the results, the p-values of all three variables (`refusetonscollected`, `papertonscollected`, and `mgptonscollected`) are smaller than 0.05 so we reject the null hypothesis and conclude that the means are different for both the longitude and latitude ANOVA tests. 
+
 ## Discussion and Conclusion 
-Overall, the visualizations and the ANOVA test yielded the expected results. The rat problem in New York City is significant..... Things that surprised us: Brooklyn having the highest rat frequency, seasonal trends in rat sightings. 
+Overall, the visualizations and the ANOVA test yielded the expected results. The rat problem in New York City is significant..... Things that surprised us: Brooklyn having the highest rat frequency, seasonal trends in rat sightings.
 
 
 

@@ -33,6 +33,8 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-6.4.2/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet" />
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -259,7 +261,22 @@ $(document).ready(function () {
   <a href="visualizations.html">Visualizations</a>
 </li>
 <li>
+  <a href="statistics_testing.html">ANOVA Tests</a>
+</li>
+<li>
   <a href="report.html">Report</a>
+</li>
+<li>
+  <a>
+    <span class="fa fa-play-circle fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://github.com/quinnra3/p8105_final_project">
+    <span class="fa fa-github fa-lg"></span>
+     
+  </a>
 </li>
       </ul>
     </div><!--/.nav-collapse -->
@@ -280,7 +297,7 @@ $(document).ready(function () {
 <h2>NYC Rodent Inspection Data Summary</h2>
 <pre class="r"><code>rodent_inspec_df &lt;- read_csv(&quot;data/Rodent Inspection Data - 2023.csv&quot;)</code></pre>
 <pre><code>## Rows: 17578 Columns: 25
-## ── Column specification ────────────────────────────────────────────────────────
+## ── Column specification ─────────────────────────────────
 ## Delimiter: &quot;,&quot;
 ## chr (12): INSPECTION_TYPE, JOB_ID, BLOCK, LOT, HOUSE_NUMBER, STREET_NAME, BO...
 ## dbl (13): JOB_TICKET_OR_WORK_ORDER_ID, JOB_PROGRESS, BBL, BORO_CODE, ZIP_COD...
@@ -509,7 +526,7 @@ class="section level2">
 <h2>Department of Sanitation Monthly Tonnage Data Summary</h2>
 <pre class="r"><code>dsny_df &lt;- read_csv(&quot;data/DSNY_Monthly_Tonnage_Data_20231108.csv&quot;)</code></pre>
 <pre><code>## Rows: 23237 Columns: 11
-## ── Column specification ────────────────────────────────────────────────────────
+## ── Column specification ─────────────────────────────────
 ## Delimiter: &quot;,&quot;
 ## chr (3): MONTH, BOROUGH, COMMUNITYDISTRICT
 ## dbl (8): REFUSETONSCOLLECTED, PAPERTONSCOLLECTED, MGPTONSCOLLECTED, RESORGAN...
