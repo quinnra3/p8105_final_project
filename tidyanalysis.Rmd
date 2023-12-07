@@ -1,5 +1,5 @@
 ---
-title: "tidy&analysis"
+title: "tidy-analysis"
 output: html_document
 date: '2023-12-01'
 ---
