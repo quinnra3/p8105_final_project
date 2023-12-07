@@ -1,8 +1,8 @@
 ---
 title: "Proposal"
-author: "Quinn Anderson, Laylah Jones, Wynter Henry"
+author: *"Quinn Anderson, Laylah Jones, Wynter Henry"*
 date: '`r format(Sys.time(), "%Y-%m-%d")`'
-output: github_document
+output: html_document
 ---
 
 ### P8105 Final Project Proposal
