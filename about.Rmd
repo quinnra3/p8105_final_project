@@ -11,7 +11,7 @@ library(cropcircles)
 ```
 
 
-# <img src="pictures/wynter.jpeg" alt="Avatar" width="200" height="300" style="border:2px solid pink"> Wynter Henry
+# <img src="rat_pictures/wynter.jpeg" alt="Avatar" width="200" height="300" style="border:2px solid pink"> Wynter Henry
 
 **About Wynter:**
 
@@ -19,7 +19,7 @@ Wynter is a first year MS in Epidemiology candidate here at Mailman. She has a B
 
 -----------------------------------------------------
 
-# <img src="pictures/laylah.jpeg" alt="Avatar" width="200" height="300" style="border:2px solid orange"> Laylah Jones
+# <img src="rat_pictures/laylah.jpeg" alt="Avatar" width="200" height="300" style="border:2px solid orange"> Laylah Jones
 
 **About Laylah:**
 
@@ -27,7 +27,7 @@ Laylah is a first year MS student in Epidemiology at the Mailman School of Publi
 
 -----------------------------------------------------
 
-# <img src="pictures/quinn.jpeg" alt="Avatar" width="200" height="300" style="border:2px solid green"> Quinn Anderson
+# <img src="rat_pictures/quinn.jpeg" alt="Avatar" width="200" height="300" style="border:2px solid green"> Quinn Anderson
 
 **About Quinn:**
 
