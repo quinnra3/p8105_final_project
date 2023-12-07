@@ -1,0 +1,59 @@
+---
+title: "tidy-analysis"
+output: html_document
+date: '2023-12-01'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(readr)
+library(readxl)
+library(tidyverse)
+library(tidyr)
+library(dplyr)
+library(stringr)
+```
+
+Cleaning and tidying the datasets: 
+
+```{r}
+## DSNY Monthly Tonnage Dataset 
+
+dsny_df <- read_csv("data/DSNY_Monthly_Tonnage_Data_20231108.csv") 
+
+dsny_df = 
+  dsny_df |> 
+  janitor::clean_names() |> 
+  separate(month, c("year", "month"), sep = " / ") |> filter(year == "2023") |> 
+  select(-communitydistrict, -resorganicstons, -schoolorganictons, -leavesorganictons, -xmastreetons)
+```
+
+```{r}
+## Rodent Inspection Dataset 
+
+rodent_inspec_df <- read_csv("data/Rodent Inspection Data - 2023.csv")
+
+rodent_inspec_df = 
+  rodent_inspec_df |> 
+  janitor::clean_names() |> select(-job_id, -job_ticket_or_work_order_id, -job_progress, -bbl, -house_number, -street_name, -block, -lot, -approved_date, -location, -community_board, -council_district, -census_tract, -bin, -nta)
+```
+
+Combining all 3 datasets: 
+
+```{r}
+total_rat_df = merge(dsny_df, rodent_inspec_df)
+
+```
+
+## visualizations 
+
+```{r}
+## total rat frequency in new york --> use plotly? 
+
+## total trash collected and total rats found by borough --> bar graph?
+
+
+```
+
+=======
+>>>>>>> 6134233579c6b5bf3a7516915aade99dfff26d21
