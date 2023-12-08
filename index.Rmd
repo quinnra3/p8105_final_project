@@ -105,7 +105,7 @@ rat_map
 
 The leaflet above shows the geographic distribution of rat sightings and where trash was picked up by the NYC Department of Sanitation.
 
-## Screencast
+## Screencast!
 
 Watch our screencast by clicking the "play" button in the top right corner, or click [here](https://youtu.be/oy02SiiPjb8)!
 
