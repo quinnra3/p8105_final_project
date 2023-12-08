@@ -66,6 +66,8 @@ total_rat_df = merge(dsny_df, rodent_inspec_df)
 rat_merge_df = merge(dsny_df, rodent_tidy)
 ```
 
+--------------------------------------------------------------------------------
+
 ## Latitudinal Model
 
 $H_0:$ Every parameter of `latitude`, `refusetonscollected`, `papertonscollected`, and `mgptonscollected` is equal to zero.
@@ -81,6 +83,7 @@ anova(lat_model) %>%
 
 We use a one way ANOVA to determine if the means between variables refuse collected (tons), recyclable paper collected (tons), and recyclable metal, glass, plastic, and beverage cartons (tons) are different. Based on the results, the p-values of all three variables (`refusetonscollected`, `papertonscollected`, and `mgptonscollected`) are smaller than 0.05 so we reject the null hypothesis and conclude that the means are different.
 
+--------------------------------------------------------------------------------
 
 ## Longitudinal Model
 

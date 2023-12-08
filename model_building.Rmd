@@ -65,7 +65,11 @@ total_rat_df = merge(dsny_df, rodent_inspec_df)
 rat_merge_df = merge(dsny_df, rodent_tidy)
 ```
 
-## Regression models: trash pickup in NYC (`refusetonscollected`)
+--------------------------------------------------------------------------------
+
+## Regression Models: trash pickup in NYC (`refusetonscollected`)
+
+--------------------------------------------------------------------------------
 
 We hypothesize that trash pickup in NYC is a predictor of rodent sighitngs in NYC. To test this hypothesis, we are going to use three different models to predict rodent sightings based on trash pickup in NYC, by longitude and latitude:
 
@@ -100,6 +104,8 @@ fit1_lat = lm(latitude ~ refusetonscollected, data = rat_merge_df)
 fit2_lat = lm(latitude ~ papertonscollected, data = rat_merge_df)
 fit3_lat = lm(latitude ~ mgptonscollected, data = rat_merge_df)
 ```
+
+--------------------------------------------------------------------------------
 
 ### Cross Validation
 

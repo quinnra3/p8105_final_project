@@ -392,10 +392,12 @@ div.tocify {
 </div>
 
 
+<hr />
 <div id="regression-models-trash-pickup-in-nyc-refusetonscollected"
 class="section level2">
-<h2>Regression models: trash pickup in NYC
+<h2>Regression Models: trash pickup in NYC
 (<code>refusetonscollected</code>)</h2>
+<hr />
 <p>We hypothesize that trash pickup in NYC is a predictor of rodent
 sighitngs in NYC. To test this hypothesis, we are going to use three
 different models to predict rodent sightings based on trash pickup in
@@ -423,6 +425,7 @@ fit3_long = lm(longitude ~ mgptonscollected, data = rat_merge_df)
 fit1_lat = lm(latitude ~ refusetonscollected, data = rat_merge_df)
 fit2_lat = lm(latitude ~ papertonscollected, data = rat_merge_df)
 fit3_lat = lm(latitude ~ mgptonscollected, data = rat_merge_df)</code></pre>
+<hr />
 <div id="cross-validation" class="section level3">
 <h3>Cross Validation</h3>
 <p>We can now perform a comparison between the six models in terms of
