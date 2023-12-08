@@ -7,7 +7,8 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Motivation and Questions 
+## Motivation and Questions
+
 As all New Yorkers know, there is a serious rat problem in the city. We see them scurrying on the subway tracks and running around street corners. For this project, we wanted to look in to the rat frequency in New York. How many rats are there in New York? Which borough has the most rats? Is rat frequency associated with trash tonnage? Our project answers these questions in the following analysis. 
 
 
@@ -18,7 +19,9 @@ The New York City rat problem is constantly covered in news outlets, and we want
 
 ## Data
 
-We obtained two of our datasets (Rodent Inspection Data and DSNY Monthly Tonnage Data 2023) from NYC Health's open data website. We cleaned the data by removing values and columns that were not necessary for our research question and data analysis. The main function we used for this was select() and mutate(), where we were easily able to remove and change columns. We obtained our third dataset (Transit App Rat Reports) from the NYC Subway Rat Detector; we were not able to combine this dataset with the other two due to size. This dataset was already tidy, and we opted not to make any further changes to this dataset. 
+We obtained two of our datasets ([Rodent Inspection Data](https://data.cityofnewyork.us/Health/Rodent-Inspection/p937-wjvj) and [DSNY Monthly Tonnage Data 2023](https://data.cityofnewyork.us/City-Government/DSNY-Monthly-Tonnage-Data/ebb7-mvp5)) from NYC Health's open data website. We cleaned the data by removing values and columns that were not necessary for our research question and data analysis. The main functions used were `select()` and `mutate()`, where we were easily able to remove and change columns.
+
+We obtained our third dataset ([Transit App Rat Reports](https://transitapp.com/rats) from the NYC Subway Rat Detector; we were not able to combine this dataset with the other two due to size. This dataset was already tidy, and we opted not to make any further changes to this dataset.
 
 
 ## Exploratory Analysis
@@ -38,8 +41,4 @@ We conducted two ANOVA tests to determine if the means between variables longitu
 
 ## Discussion and Conclusion 
 
-Based on the exploratory analysis and the ANOVA test, we can conclude that the rat problem in New York City is significant. The two boroughs that have the highest rat frequency and subway sightings are Manhattan and Brooklyn, and the borough with the least rat frequency and subway sightings is Staten Island. While the rat presence in Manhattan and Brooklyn was expected, we were surprised that Staten Island had a significantly lower rat population compared to the other four boroughs. Along with these findings, we also determined that rat frequency appears to be seasonal, with more rats being sighted between July to October compared to other months out of the year. In terms of the relationship between trash tonnage and rat frequency, based on the boxplot we constructed, there does not appear to be a strong association between the two variables.  
-
-
-
- 
+Based on the exploratory analysis and the ANOVA test, we can conclude that the rat problem in New York City is significant. The two boroughs that have the highest rat frequency and subway sightings are Manhattan and Brooklyn, and the borough with the least rat frequency and subway sightings is Staten Island. While the rat presence in Manhattan and Brooklyn was expected, we were surprised that Staten Island had a significantly lower rat population compared to the other four boroughs. Along with these findings, we also determined that rat frequency appears to be seasonal, with more rats being sighted between July to October compared to other months out of the year. In terms of the relationship between trash tonnage and rat frequency, based on the boxplot we constructed, there does not appear to be a strong association between the two variables. Future research should investigate the predictors of rat sightings in NYC by borough.

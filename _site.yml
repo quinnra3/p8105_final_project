@@ -10,14 +10,18 @@ navbar:
     - text: "Proposal"
       href: proposal.html
  
-    - text: "EDA"
+    - text: "Data Summaries"
       href: eda.html
   
     - text: "Visualizations"
       href: visualizations.html
       
-    - text: "ANOVA Tests"
-      href: statistics_testing.html
+    - text: "Inferential Statistics"
+      menu:
+      - text: "Model Building"
+        href: model_building.html
+      - text: "ANOVA"
+        href: statistics_testing.html
 
     - text: "Report"
       href: report.html
@@ -31,5 +35,8 @@ navbar:
 output:
   html_document:
     includes:
+      in_header: header.html
     theme: yeti
-    in_header: header.html
+    toc : true
+    toc_float: true
+    code_folding: hide

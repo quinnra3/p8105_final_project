@@ -1,7 +1,10 @@
 ---
 title: "Proposal"
+<<<<<<< HEAD
 author: "Quinn Anderson, Laylah Jones, Wynter Henry"
 date: '`r format(Sys.time(), "%Y-%m-%d")`'
+=======
+>>>>>>> f138dd92b24070a68e9848b25266c2d6b1b15de2
 output: html_document
 ---
 
