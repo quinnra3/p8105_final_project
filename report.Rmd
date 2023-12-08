@@ -10,6 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Motivation and Questions
 
 As all New Yorkers know, there is a serious rat problem in the city. We see them scurrying on the subway tracks and running around street corners. For this project, we wanted to look in to the rat frequency in New York. How many rats are there in New York? Which borough has the most rats? Is rat frequency associated with trash tonnage? Our project answers these questions in the following analysis. 
+
 In addition to this, rats are a public health concern. In a report published by the ([Centers for Disease Control](https://www.cdc.gov/healthypets/pets/wildlife/rodent-control.html#:~:text=The%20best%20way%20to%20prevent,prevent%20diseases%20spread%20by%20rodents.), diseases spread directly by rats include Hantavirus, Lassa Fever, and Monkeypox. Diseases spread indirectly by rats include Colorado tick fever, Lyme disease, and Scrub typhus. Infestation of rodents is the main reason diseases spread from rodents to people, and the best way to prevent rodent infestation is to remove food sources. With this in mind, New York City should begin to seriously address its rat problem. This report aims to investigate the association between rat sightings and trash pick up in New York City boroughs. 
 
 
@@ -34,8 +35,16 @@ For our visualizations, we decided to make graphs that addressed five questions:
 *  Is there any correlation between monthly collection of garbage tonnages that the NYC Department of Sanitation collects and the prevalence of rat sightings?
 *  Which borough has the most monthly reported rat sightings?
 
+## Inferential Statistics
 
-## Statistical Testing: ANOVA 
+### Regression Models
+
+To determine if trash collected in NYC is a predictor of rat sightings, we created regression models based off of longitude, latitude, and our three selected types of trash collected in NYC (in tons): general refuse, recyclable paper, and recyclable metal, glass, plastic, and beverage cartons. We first fit the models and then conducted a comparison in terms of a cross-validated prediction error. Then we used the `map` function to each regression model to train the data, and computed the root mean squared errors (RMSEs) for each model by applying the `map2_dbl` function to the testing data. 
+
+Based on the distributions [here](model_building.html), our findings show that the model with longitude, refuse collected, is able to generate better predictions than the other models. we can conclude that this model is a predictor for rat sightings in NYC. Future research should investigate additional predictors of rat sightings, such as characteristics of rats or environmental characteristics.
+
+
+### Statistical Testing: ANOVA 
 
 We conducted two ANOVA tests to determine if the means between variables longitude, latitude, refuse collected (tons), recyclable paper collected (tons), and recyclable metal, glass, plastic, and beverage cartons (tons) are different. Two separate ANOVA tests were conducted to evaluate longitude against the trash variables, and latitude against the trash variables. Based on the results, the p-values of all three variables (`refusetonscollected`, `papertonscollected`, and `mgptonscollected`) are smaller than 0.05 so we reject the null hypothesis and conclude that the means are different for both the longitude and latitude ANOVA tests. 
 
