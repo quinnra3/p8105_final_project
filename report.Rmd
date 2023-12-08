@@ -10,6 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Motivation and Questions
 
 As all New Yorkers know, there is a serious rat problem in the city. We see them scurrying on the subway tracks and running around street corners. For this project, we wanted to look in to the rat frequency in New York. How many rats are there in New York? Which borough has the most rats? Is rat frequency associated with trash tonnage? Our project answers these questions in the following analysis. 
+In addition to this, rats are a public health concern. In a report published by the ([Centers for Disease Control](https://www.cdc.gov/healthypets/pets/wildlife/rodent-control.html#:~:text=The%20best%20way%20to%20prevent,prevent%20diseases%20spread%20by%20rodents.), diseases spread directly by rats include Hantavirus, Lassa Fever, and Monkeypox. Diseases spread indirectly by rats include Colorado tick fever, Lyme disease, and Scrub typhus. Infestation of rodents is the main reason diseases spread from rodents to people, and the best way to prevent rodent infestation is to remove food sources. With this in mind, New York City should begin to seriously address its rat problem. This report aims to investigate the association between rat sightings and trash pick up in New York City boroughs. 
 
 
 ## Related Work
@@ -27,11 +28,11 @@ We obtained our third dataset ([Transit App Rat Reports](https://transitapp.com/
 ## Exploratory Analysis
 
 For our visualizations, we decided to make graphs that addressed five questions:
-- What is the overall frequency of rat sightings?
-- What is the distribution of rat sightings across different boroughs in NYC?
-- Are there any seasonal trends or patterns in rat sightings?
-- Is there any correlation between monthly collection of garbage tonnages that the NYC Department of Sanitation collects and the prevalence of rat sightings?
-- Which borough has the most monthly reported rat sightings?
+*  What is the overall frequency of rat sightings?
+*  What is the distribution of rat sightings across different boroughs in NYC?
+*  Are there any seasonal trends or patterns in rat sightings?
+*  Is there any correlation between monthly collection of garbage tonnages that the NYC Department of Sanitation collects and the prevalence of rat sightings?
+*  Which borough has the most monthly reported rat sightings?
 
 
 ## Statistical Testing: ANOVA 
@@ -42,3 +43,7 @@ We conducted two ANOVA tests to determine if the means between variables longitu
 ## Discussion and Conclusion 
 
 Based on the exploratory analysis and the ANOVA test, we can conclude that the rat problem in New York City is significant. The two boroughs that have the highest rat frequency and subway sightings are Manhattan and Brooklyn, and the borough with the least rat frequency and subway sightings is Staten Island. While the rat presence in Manhattan and Brooklyn was expected, we were surprised that Staten Island had a significantly lower rat population compared to the other four boroughs. Along with these findings, we also determined that rat frequency appears to be seasonal, with more rats being sighted between July to October compared to other months out of the year. In terms of the relationship between trash tonnage and rat frequency, based on the boxplot we constructed, there does not appear to be a strong association between the two variables. Future research should investigate the predictors of rat sightings in NYC by borough.
+
+## Challenges and Limitations 
+
+Some challenges and limitations we ran into were related to the datasets. The raw datasets we used were extremely large, and it was difficult to combine and work with them. In addition to this, in Rodent Inspection Data, there were secondary reporting of rat sightings from filed rodent inspections. A more accurate report of the data would have been from the primary rat sightings. The Rodent App Data also was not as usable as we wanted it to be, but it still gave us valuable insight on rat sightings across subway stations in each borough. 
