@@ -26,7 +26,11 @@ scale_fill_discrete = scale_fill_viridis_d
 theme_set(theme_minimal() + theme(legend.position = "bottom"))
 ```
 
-## NYC Rodent Inspection Data Summary
+--------------------------------------------------------------------------------
+
+## **NYC Rodent Inspection Data Summary**
+
+--------------------------------------------------------------------------------
 
 The NYC Rodent Inspection data is sourced from [NYC Open Data](https://data.cityofnewyork.us/Health/Rodent-Inspection/p937-wjvj). Data is reported from the NYC Department of Health and Mental Hygiene (DOHMH), Division of Environmental Health Pest Control Database. The dataset was last updated December 8, 2023 and is updated daily. The data provides information on rodent inspections throughout the NYC boroughs.
 
@@ -42,7 +46,11 @@ rodent_inspec_df =
 skimr::skim_without_charts(rodent_inspec_df)
 ```
 
-## Department of Sanitation Monthly Tonnage Data Summary
+--------------------------------------------------------------------------------
+
+## **Department of Sanitation Monthly Tonnage Data Summary**
+
+--------------------------------------------------------------------------------
 
 The DSNY Monthly Tonnage Data data is sourced from [NYC Open Data](https://data.cityofnewyork.us/City-Government/DSNY-Monthly-Tonnage-Data/ebb7-mvp5). Data is reported from the NYC Department of Sanitation that collects from NYC residences and institutions. The dataset was last updated November 8, 2023, and is updated monthly.
 
@@ -58,7 +66,11 @@ dsny_df =
 skimr::skim_without_charts(dsny_df)
 ```
 
-## Transit Rat App Data
+--------------------------------------------------------------------------------
+
+## **Transit Rat App Data**
+
+--------------------------------------------------------------------------------
 
 The Transit rat app data is sourced from the [Transit App NYC Subway Rat Detector](https://transitapp.com/rats). This dataset contains self-reported data from the MTA's 1.2 million subway riders who are ratting out their furry friends. The dataset is upated daily, last updated December 8, 2023.
 

@@ -34,8 +34,10 @@ theme_set(theme_bw() +
 options(scipen = 999)
 ```
 
-# Loading Data Sets
+
 ```{r}
+## Loading Data Sets
+
 dsny_df <- read_csv("data/DSNY_Monthly_Tonnage_Data_20231108.csv") 
 
 dsny_df = 
@@ -69,8 +71,10 @@ total_rat_df = merge(dsny_df, rodent_inspec_df)
 rat_merge_df = merge(dsny_df, rodent_tidy)
 ```
 
+--------------------------------------------------------------------------------
 
 ## Rat Frequency by Borough
+
 ```{r}
 ## bar graph 
 
@@ -100,6 +104,7 @@ ggplotly(rat_frequency_plot)
 
 This graph illustrates the frequency of rat activity in each borough of New York City. Brooklyn has the most rat activity, with over 300,000 confirmed rat activity sightings. Staten Island has the least amount of rat activity, with only 990 confirmed rat activity sightings. Overall, this graph gives us an idea of how severe the rat problem is in each borough of the city. 
 
+--------------------------------------------------------------------------------
 
 ## Monthly Rat Activity 
 
@@ -125,6 +130,7 @@ ggplotly(rat_month_plot)
 
 This graph illustrates the frequency of rat activity across New York City by month in 2023, up to October. The rat frequency stays relatively consistent between January and June, but rises significantly from July to October. This could be because the environment in New York from July to October is the most favorable for rat survival. 
 
+--------------------------------------------------------------------------------
 
 ## Seasonal Trends 
 
@@ -141,6 +147,7 @@ ggplotly(seasonal_rat)
 
 This graph illustrates the seasonal trends in rat sightings in New York City. Supported by the graph above, rat sightings are significantly lower in January to June compared to July to October. This suggests that rats are more active in the warmer months compared to the colder months. 
 
+--------------------------------------------------------------------------------
 
 ## Trash Tonnage vs Rat Sightings 
 
@@ -163,7 +170,7 @@ ggplotly(rat_trash_plot)
 
 This graph illustrates a proposed relationship between trash tonnage and rat sightings. Our group hypothesized that where there is more trash collected, there will be a higher rat presence. Based on the distribution of the plot, it appears that there is not a relationship between these two variables; meaning that trash tonnage does not impact rat frequency. 
 
-
+--------------------------------------------------------------------------------
 
 ## Transit App Graphs 
 
