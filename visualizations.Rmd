@@ -168,7 +168,7 @@ rat_trash_plot =
 ggplotly(rat_trash_plot)
 ```
 
-This graph illustrates a proposed relationship between trash tonnage and rat sightings. Our group hypothesized that where there is more trash collected, there will be a higher rat presence. Based on the distribution of the plot, it appears that there is not a relationship between these two variables; meaning that trash tonnage does not impact rat frequency. 
+This graph illustrates a proposed relationship between trash tonnage and rat sightings. Our group hypothesized that where there is more trash collected, there will be a higher rat presence. Based on the distribution of the plot, it appears that there is a relationship between these two variables; meaning that trash tonnage impacts rat frequency. 
 
 --------------------------------------------------------------------------------
 
