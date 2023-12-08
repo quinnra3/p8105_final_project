@@ -1,18 +1,16 @@
 ---
-title: "Proposal"
-<<<<<<< HEAD
+title: "P8105 Final Project Proposal"
 author: "Quinn Anderson, Laylah Jones, Wynter Henry"
 date: '`r format(Sys.time(), "%Y-%m-%d")`'
-=======
->>>>>>> f138dd92b24070a68e9848b25266c2d6b1b15de2
 output: html_document
 ---
+-------------------------------------------------------------------------
 
-### P8105 Final Project Proposal
+### **Project Title: Rat Reign: Unveiling the Truth Behind NYC's Rodent Infestation**
 
-Project title: Rat Reign: Unveiling the Truth Behind NYC's Rodent Infestation 
-=======
-This is a project proposal for the following team members: Wynter Henry (wch2124 ), Quinn Anderson (UNI qra2000), and Laylah Jones (lsj2122). We are proposing to investigate the presence of rats in the city to determine if they really rule the Big Apple. We will utilize data sourced from Transit, NYC Rodent Inspection data, and NYC borough data to investigate where rodent inspection and activity is most prevalent. Our hope is to add further insight into a rat-tastic issue the city faces. 
+-------------------------------------------------------------------------
+
+This is a project proposal for the following team members: Wynter Henry (wch2124), Quinn Anderson (qra2000), and Laylah Jones (lsj2122). We are proposing to investigate the presence of rats in the city to determine if they really rule the Big Apple. We will utilize data sourced from Transit, NYC Rodent Inspection data, and NYC borough data to investigate where rodent inspection and activity is most prevalent. Our hope is to add further insight into a rat-tastic issue the city faces. 
 
 In conducting our research, some important questions we would like to explore are:
 
@@ -23,6 +21,8 @@ In conducting our research, some important questions we would like to explore ar
 5. Which borough has the most monthly reported rat sightings?
 
 The intended final products for this project consist of a comprehensive report summarizing our findings, interactive data visualizations, as well as a project website. Our planned analyses/visualizations include a geospatial analysis to map the frequency of rat sightings across the different boroughs, a comparative analysis of rat sightings in relation to garbage collection, and interactive visualizations to illustrate trends and patterns in rat infestation.  Potential challenges of this project include aligning data sources, determining if additional/different datasets are necessary to answer the questions we proposed. 
+
+--------------------------------------------------------------------------------
 
 #### *Please see below for our draft project timeline and milestones:*
 
