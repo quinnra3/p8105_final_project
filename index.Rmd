@@ -14,6 +14,7 @@ output:
 - Jessica Tisch, New York City’s sanitation commissioner
 
 <img src="pictures/rat_nyc.jpg" style="width:60%">
+Illustration by Doug Chayka, Source: Getty [here](https://www.theatlantic.com/ideas/archive/2023/03/new-york-city-rat-infestation-politics/673250/)
 
 ## Rat Sightings and Trash Collection
 
