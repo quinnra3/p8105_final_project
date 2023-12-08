@@ -71,7 +71,7 @@ rat_merge_df = merge(dsny_df, rodent_tidy)
 
 --------------------------------------------------------------------------------
 
-We hypothesize that trash pickup in NYC is a predictor of rodent sighitngs in NYC. To test this hypothesis, we are going to use three different models to predict rodent sightings based on trash pickup in NYC, by longitude and latitude:
+We hypothesize that trash pickup in NYC is a predictor of rodent sightings in NYC. To test this hypothesis, we are going to use three different models to predict rodent sightings based on trash pickup in NYC, by longitude and latitude:
 
 * fit1_long = lm(longitude ~ refusetonscollected, data = rat_merge_df)
 * fit2_long = lm(longitude ~ papertonscollected, data = rat_merge_df)
