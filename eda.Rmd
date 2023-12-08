@@ -1,7 +1,6 @@
 ---
-title: "EDA"
+title: "Data Summaries"
 output: html_document
-date: '2023-12-01'
 ---
 
 ```{r setup, include=FALSE}
@@ -10,6 +9,7 @@ library(tidyverse)
 knitr::opts_chunk$set(
 	echo = TRUE,
 	warning = FALSE,
+	message = FALSE,
 	fig.width = 8, 
   fig.height = 6,
   out.width = "90%"
@@ -28,6 +28,10 @@ theme_set(theme_minimal() + theme(legend.position = "bottom"))
 
 ## NYC Rodent Inspection Data Summary
 
+The NYC Rodent Inspection data is sourced from [NYC Open Data](https://data.cityofnewyork.us/Health/Rodent-Inspection/p937-wjvj). Data is reported from the NYC Department of Health and Mental Hygiene (DOHMH), Division of Environmental Health Pest Control Database. The dataset was last updated December 8, 2023 and is updated daily. The data provides information on rodent inspections throughout the NYC boroughs.
+
+Please note that if a property/taxplot is not present, that does not indicate an absence of rats, rather just that the locatinon has not been inspected. Additionally, neighborhoods with higher number of properties with active rat signs may not actually have had higher rat populations but simply more inspections.
+
 ```{r}
 rodent_inspec_df <- read_csv("data/Rodent Inspection Data - 2023.csv")
 
@@ -39,6 +43,8 @@ skimr::skim_without_charts(rodent_inspec_df)
 ```
 
 ## Department of Sanitation Monthly Tonnage Data Summary
+
+The DSNY Monthly Tonnage Data data is sourced from [NYC Open Data](https://data.cityofnewyork.us/City-Government/DSNY-Monthly-Tonnage-Data/ebb7-mvp5). Data is reported from the NYC Department of Sanitation that collects from NYC residences and institutions. The dataset was last updated November 8, 2023, and is updated monthly.
 
 ```{r}
 dsny_df <- read_csv("data/DSNY_Monthly_Tonnage_Data_20231108.csv")
@@ -52,10 +58,15 @@ dsny_df =
 skimr::skim_without_charts(dsny_df)
 ```
 
-```{r, include = FALSE}
-total_rat_df = merge(dsny_df, rodent_inspec_df)
-```
+## Transit Rat App Data
 
+The Transit rat app data is sourced from the [Transit App NYC Subway Rat Detector](https://transitapp.com/rats). This dataset contains self-reported data from the MTA's 1.2 million subway riders who are ratting out their furry friends. The dataset is upated daily, last updated December 8, 2023.
+
+```{r}
+app_data <- read_csv("data/Transit app rat reports - 2023-10-08 to 2023-11-07.csv")
+
+skimr::skim_without_charts(app_data)
+```
 
 
 
